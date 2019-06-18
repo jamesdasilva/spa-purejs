@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+}    
+#header{
+    background-color: blueviolet;
+    height: 60px;
+}
+.header-content{
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    height: 60px;
+    background-color: azure;
+}
+.header-content__logo{
+
+}
