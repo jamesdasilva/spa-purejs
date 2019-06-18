@@ -2,16 +2,39 @@ body{
     margin: 0;
 }    
 #header{
-    background-color: blueviolet;
-    height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: blueviolet;
+  height: 60px;
 }
-.header-content{
-    width: 100%;
-    max-width: 720px;
-    margin: 0 auto;
-    height: 60px;
-    background-color: azure;
+.header__container{
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  height: 60px;
+  background-color: azure;
 }
-.header-content__logo{
-
+#body{
+  background-color: #555;
+  height: 600px;
+}
+.body__container{
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  height: 600px;
+  background-color: rgb(218, 247, 247);
+}
+#footer{
+  background-color: #999;
+  height: 60px;
+}
+.footer__container{
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  height: 60px;
+  background-color: rgb(118, 147, 247);
 }
