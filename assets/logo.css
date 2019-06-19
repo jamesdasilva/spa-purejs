@@ -1,31 +1,27 @@
-$width: 40px;
-$height: 40px;
-
 .logo {
-  width: $width;
-  height: $height;
+  width: 40px;
+  height: 40px;
   padding: 2px;
   color: #fff;
   position: relative;
   border-radius: 20px;
-  overflow: hidden;
-}
-.logo--text{
+  overflow: hidden; }
+
+.logo--text {
   color: #FFF;
   position: absolute;
   top: 14px;
   left: 11px;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-}
+  font-weight: bold; }
+
 .hexagon {
   position: relative;
-  width: 40px; 
+  width: 40px;
   height: 23.09px;
   background-color: #e3472f;
   margin: 8.25px 0;
-  margin-left: -0.12px;
-}
+  margin-left: -0.12px; }
 
 .hexagon:before,
 .hexagon:after {
@@ -34,16 +30,13 @@ $height: 40px;
   width: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-radius: 0px
-}
+  border-radius: 0px; }
 
 .hexagon:before {
   bottom: 100%;
-  border-bottom: 11.55px solid #e3472f;
-}
+  border-bottom: 11.55px solid #e3472f; }
 
 .hexagon:after {
   top: 100%;
   width: 0;
-  border-top: 11.55px solid #e3472f;
-}
+  border-top: 11.55px solid #e3472f; }

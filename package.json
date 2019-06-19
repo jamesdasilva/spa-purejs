@@ -11,7 +11,8 @@
     "build:watch": "./node_modules/.bin/webpack -w",
     "build:prod": "./node_modules/.bin/webpack -p",
     "lint": "./node_modules/.bin/eslint src/**/*.js",
-    "scss": "./node_modules/.bin/node-sass scss/style.scss > assets/style.css"
+    "scss": "./node_modules/.bin/node-sass scss/style.scss > assets/style.css",
+    "scss:watch": "./node_modules/.bin/node-sass scss/style.scss -wo assets"
   },
   "repository": {
     "type": "git",
