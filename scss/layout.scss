@@ -1,0 +1,45 @@
+$width: 820px;
+$height: 100px;
+
+body{
+    margin: 0;
+}    
+#header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: blueviolet;
+  height: $height;
+}
+.header__container{
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $width;
+  margin: 0 auto;
+  padding: 30px 0 0 0;
+  height: $height;
+  background-color: #FFF;
+}
+#body{
+  background-color: #555;
+  height: 600px;
+}
+.body__container{
+  width: 100%;
+  max-width: $width;
+  margin: 0 auto;
+  height: 600px;
+  background-color: rgb(218, 247, 247);
+}
+#footer{
+  background-color: #999;
+  height: 60px;
+}
+.footer__container{
+  width: 100%;
+  max-width: $width;
+  margin: 0 auto;
+  height: 60px;
+  background-color: rgb(118, 147, 247);
+}
