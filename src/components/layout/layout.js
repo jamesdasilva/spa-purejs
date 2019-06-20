@@ -1,13 +1,9 @@
-const Layout = ({ Credits, FooterBrand, Link, User }) => `
+const Layout = ({ Logo, Credits, FooterBrand, Link, User, AddPostButton }) => `
   <div id="app">
     <div id="header">       
       <div class="header__container">
         <div class="header__box-left">
-
-          <div class="logo">
-            <div class="logo__hexagon"></div>
-            <div class="logo__text">UX</div>
-          </div>
+          ${Logo()}
 
           <div class="hamburguer-button">
             <div class="hamburguer-button__bar"></div>
@@ -27,11 +23,7 @@ const Layout = ({ Credits, FooterBrand, Link, User }) => `
 
         <div class="header__box-right">
           ${User()}
-
-          <div class="add-post-button">
-            <div class="add-post-button__icon">+</div>
-            <div class="add-post-button__text">Add Post</div>
-          </div>
+          ${AddPostButton()}
         </div>
         
       </div>
