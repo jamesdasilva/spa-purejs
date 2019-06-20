@@ -63,10 +63,16 @@ body{
   flex-direction: row-reverse;
   flex-grow: 2
 }
-.footer__wrap{
+.footer__brand{
+  display: flex;
+}
+.footer__brand__logo{
   margin: 15px 15px 15px 0;
 }
-.brand-footer__title{
+.footer__brand__text{
+  margin: 15px 15px 15px 0;
+}
+.footer__brand__text__title{
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -74,7 +80,7 @@ body{
   margin-top: 7px;
   margin-bottom: 3px;
 }
-.brand-footer__desciption{
+.footer__brand__text__desciption{
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(110, 110, 110);
   font-size: 12px;

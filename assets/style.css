@@ -61,10 +61,16 @@ body {
   flex-direction: row-reverse;
   flex-grow: 2; }
 
-.footer__wrap {
+.footer__brand {
+  display: flex; }
+
+.footer__brand__logo {
   margin: 15px 15px 15px 0; }
 
-.brand-footer__title {
+.footer__brand__text {
+  margin: 15px 15px 15px 0; }
+
+.footer__brand__text__title {
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -72,7 +78,7 @@ body {
   margin-top: 7px;
   margin-bottom: 3px; }
 
-.brand-footer__desciption {
+.footer__brand__text__desciption {
   font-family: Arial, Helvetica, sans-serif;
   color: #6e6e6e;
   font-size: 12px; }
@@ -106,7 +112,7 @@ body {
   border-radius: 20px;
   overflow: hidden; }
 
-.logo--text {
+.logo__text {
   color: #FFF;
   position: absolute;
   top: 14px;
@@ -114,7 +120,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold; }
 
-.hexagon {
+.logo__hexagon {
   position: relative;
   width: 40px;
   height: 23.09px;
@@ -122,8 +128,8 @@ body {
   margin: 8.25px 0;
   margin-left: -0.12px; }
 
-.hexagon:before,
-.hexagon:after {
+.logo__hexagon:before,
+.logo__hexagon:after {
   content: "";
   position: absolute;
   width: 0;
@@ -131,11 +137,11 @@ body {
   border-right: 20px solid transparent;
   border-radius: 0px; }
 
-.hexagon:before {
+.logo__hexagon:before {
   bottom: 100%;
   border-bottom: 11.55px solid #e3472f; }
 
-.hexagon:after {
+.logo__hexagon:after {
   top: 100%;
   width: 0;
   border-top: 11.55px solid #e3472f; }
@@ -263,7 +269,8 @@ body {
   text-align: center;
   height: 33px;
   line-height: 33px;
-  border-bottom: 1px solid #e6e6e6; }
+  border-bottom: 1px solid #e6e6e6;
+  cursor: pointer; }
 
 .link__count-up__number {
   font-size: 24px;
