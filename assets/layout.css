@@ -81,23 +81,3 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: #6e6e6e;
   font-size: 12px; }
-
-.credites {
-  margin: 15px 0; }
-
-.links {
-  text-align: right;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  color: #2b2b2b;
-  margin-top: 7px;
-  margin-bottom: 3px; }
-  .links a {
-    color: #e3472f;
-    text-decoration: none; }
-
-.copyright {
-  text-align: right;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #6e6e6e;
-  font-size: 12px; }
