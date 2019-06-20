@@ -40,12 +40,58 @@ body {
   background-color: #daf7f7; }
 
 #footer {
-  background-color: #999;
+  background-color: #fff;
   height: 60px; }
 
 .footer__container {
+  display: flex;
   width: 100%;
   max-width: 820px;
   margin: 0 auto;
-  height: 60px;
-  background-color: #7693f7; }
+  height: 70px;
+  background-color: #fff; }
+
+.footer__box-left {
+  display: flex;
+  flex-grow: 2; }
+
+.footer__box-right {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-grow: 2; }
+
+.footer__wrap {
+  margin: 15px 15px 15px 0; }
+
+.brand-footer__title {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #2b2b2b;
+  margin-top: 7px;
+  margin-bottom: 3px; }
+
+.brand-footer__desciption {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #6e6e6e;
+  font-size: 12px; }
+
+.credites {
+  margin: 15px 0; }
+
+.links {
+  text-align: right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #2b2b2b;
+  margin-top: 7px;
+  margin-bottom: 3px; }
+  .links a {
+    color: #e3472f;
+    text-decoration: none; }
+
+.copyright {
+  text-align: right;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #6e6e6e;
+  font-size: 12px; }
