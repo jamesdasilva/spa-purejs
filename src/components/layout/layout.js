@@ -1,4 +1,4 @@
-const Layout = ({ Credits, FooterBrand, Link }) => `
+const Layout = ({ Credits, FooterBrand, Link, User }) => `
   <div id="app">
     <div id="header">       
       <div class="header__container">
@@ -26,10 +26,7 @@ const Layout = ({ Credits, FooterBrand, Link }) => `
         </div>
 
         <div class="header__box-right">
-          <div class="user">
-            <img class="user__image" src="https://picsum.photos/id/237/40/40" alt="" />
-            <div class="user__count"></div>
-          </div>
+          ${User()}
 
           <div class="add-post-button">
             <div class="add-post-button__icon">+</div>
