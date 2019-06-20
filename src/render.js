@@ -1,24 +1,18 @@
-import Link from './components/link';
-import FooterBrand from './components/footer-brand';
+import Link from './components/link/link';
+import FooterBrand from './components/footer-brand/footer-brand';
+import Credits from './components/credits/credits';
+import Layout from './components/layout/layout';
 
 const render = () => {
-  const link = Link({
-    count: 4,
-    title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias at facilis blanditiis asperiores a repudiandae inventore quam nemo',
-    url: 'google.com',
-    category: 'UX Design',
-    comments: '',
-    author: '',
-    time: '',
-  });
-  const conatiner = document.querySelector('#LinkComponent');
-  const component = document.createRange().createContextualFragment(link);
-  conatiner.appendChild(component);
 
-  const footerBrand = FooterBrand();
-  const conatiner2 = document.querySelector('#FooterBrand');
-  const component2 = document.createRange().createContextualFragment(footerBrand);
-  conatiner2.appendChild(component2);
+  const layout = Layout({
+    Link,
+    FooterBrand,
+    Credits
+  });
+  const conatiner = document.querySelector('#root');
+  const component = document.createRange().createContextualFragment(layout);
+  conatiner.appendChild(component);
 };
 
 export default render;
