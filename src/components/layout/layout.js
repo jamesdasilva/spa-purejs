@@ -1,4 +1,4 @@
-const Layout = ({ Logo, Credits, FooterBrand, Link, User, AddPostButton, HamburguerButton, Search }) => `
+const Layout = ({ data, Logo, Credits, FooterBrand, ListOfLinks, User, AddPostButton, HamburguerButton, Search}) => `
   <div id="app">
     <div id="header">       
       <div class="header__container">
@@ -15,36 +15,7 @@ const Layout = ({ Logo, Credits, FooterBrand, Link, User, AddPostButton, Hamburg
     </div>
     <div id="body">       
       <div class="body__container">
-        ${Link({
-          count: 4,
-          title: 'Molestias at facilis blanditiis asperiores a repudiandae inventore quam nemo',
-          url: 'google.com',
-          category: 'UX Design',
-          comments: '',
-          author: '',
-          time: '',
-        })}
-        ${Link({
-          count: 4,
-          title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias at facilis blanditiis asperiores a repudiandae inventore quam nemo',
-          url: 'google.com',
-          category: 'UX Design',
-          comments: '',
-          author: '',
-          time: '',
-        })}
-        ${Link({
-          count: 6,
-          title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          url: 'google.com',
-          category: 'UX Design',
-          comments: '',
-          author: '',
-          time: '',
-        })}
-        <div class="reload-button">
-          Load more
-        </div>
+        ${ListOfLinks(data)}
       </div>
     </div>
     <div id="footer"> 

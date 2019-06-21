@@ -31,14 +31,12 @@ body {
   flex-grow: 2; }
 
 #body {
-  padding-top: 200px;
-  height: 600px; }
+  padding-top: 200px; }
 
 .body__container {
   width: 100%;
   max-width: 820px;
-  margin: 0 auto;
-  height: 600px; }
+  margin: 0 auto; }
 
 #footer {
   background-color: #fff;
@@ -341,4 +339,5 @@ body {
   line-height: 60px;
   text-align: center;
   border-radius: 3px;
-  cursor: pointer; }
+  cursor: pointer;
+  margin: 60px 0 20px; }

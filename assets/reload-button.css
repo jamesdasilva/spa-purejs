@@ -1,12 +1,11 @@
-.reload-button{
+.reload-button {
   height: 60px;
   width: 100%;
   color: #e3472f;
-  background-color: rgb(244, 244, 241);
+  background-color: #f4f4f1;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 60px;
   text-align: center;
   border-radius: 3px;
   cursor: pointer;
-  margin: 60px 0 20px;
-}
+  margin: 60px 0 20px; }
