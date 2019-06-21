@@ -17,7 +17,7 @@ const Layout = ({ Logo, Credits, FooterBrand, Link, User, AddPostButton, Hamburg
       <div class="body__container">
         ${Link({
           count: 4,
-          title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias at facilis blanditiis asperiores a repudiandae inventore quam nemo',
+          title: 'Molestias at facilis blanditiis asperiores a repudiandae inventore quam nemo',
           url: 'google.com',
           category: 'UX Design',
           comments: '',
@@ -33,6 +33,18 @@ const Layout = ({ Logo, Credits, FooterBrand, Link, User, AddPostButton, Hamburg
           author: '',
           time: '',
         })}
+        ${Link({
+          count: 6,
+          title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+          url: 'google.com',
+          category: 'UX Design',
+          comments: '',
+          author: '',
+          time: '',
+        })}
+        <div class="reload-button">
+          Load more
+        </div>
       </div>
     </div>
     <div id="footer"> 

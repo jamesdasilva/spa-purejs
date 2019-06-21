@@ -233,10 +233,13 @@ body {
   font-size: 14px; }
 
 .link {
-  display: flex; }
+  display: flex;
+  margin-bottom: 20px; }
 
 .link__count-up {
-  width: 65px;
+  width: 45px;
+  flex-shrink: 0;
+  flex-grow: 0;
   height: 77px;
   border: 1px solid #e6e6e6;
   border-radius: 3px; }
@@ -328,3 +331,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: #6e6e6e;
   font-size: 12px; }
+
+.reload-button {
+  height: 60px;
+  width: 100%;
+  color: #e3472f;
+  background-color: #f4f4f1;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer; }
