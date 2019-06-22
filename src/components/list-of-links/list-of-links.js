@@ -13,10 +13,12 @@ const ListOfLinks = (state) => {
     comments: item.comments,
     author: item.meta.author,
     time: item.created_at,
-  })).join("") : `<div class="link">Não há resultados</div>`;   
+  })).join("") : `<div class="list-of-links__empty">não há resultados</div>`;   
   return `
+  <div class="list-of-links">
     ${links}
-    ${ReloadButton()}`;
+    ${ReloadButton()}</div>`;
+  
 }
 
 export default ListOfLinks;
