@@ -1,3 +1,10 @@
+#app {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; }
+
 body {
   margin: 0;
   background: #FFF; }
@@ -8,7 +15,9 @@ body {
   left: 0;
   right: 0;
   height: 100px;
-  border-bottom: 1px solid #f0f0f0; }
+  border-bottom: 1px solid #f0f0f0;
+  flex-grow: 0;
+  flex-shrink: 0; }
 
 .header__container {
   box-sizing: border-box;
@@ -29,11 +38,19 @@ body {
   flex-grow: 2; }
 
 #body {
-  padding-top: 160px;
-  min-height: 100vh; }
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 2;
+  flex-shrink: 2;
+  padding-top: 160px; }
 
 .body__container {
   box-sizing: border-box;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: stretch;
   width: 100%;
   max-width: 820px;
   margin: 0 auto;
@@ -41,7 +58,7 @@ body {
 
 #footer {
   background-color: #fff;
-  height: 60px; }
+  height: 70px; }
 
 .footer__container {
   box-sizing: border-box;
