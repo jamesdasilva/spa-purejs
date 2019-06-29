@@ -5,7 +5,7 @@ const Link = (props) => {
   return `
   <div class="link">
     <div class="link__count-up">
-      <div class="link__count-up__icon">X</div>
+      <div class="link__count-up__icon"><i class="fa fa-angle-up"></i></div>
       <div class="link__count-up__number">${count}</div>
     </div>
     <div class="link__content">

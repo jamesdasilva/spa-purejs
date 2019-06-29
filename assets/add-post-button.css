@@ -1,0 +1,29 @@
+.add-post-button {
+  height: 40px;
+  display: flex; }
+
+.add-post-button__icon {
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #e3472f;
+  border-radius: 3px 0 0 3px;
+  border-right: 1px solid #d63820;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px; }
+
+.add-post-button__text {
+  color: #fff;
+  background-color: #e3472f;
+  border-radius: 0 3px 3px 0;
+  width: 94px;
+  height: 40px;
+  line-height: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px; }
