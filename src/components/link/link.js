@@ -13,8 +13,8 @@ const Link = (props) => {
       <div class="link__content__title">${title}</div>
       <div class="link__content__meta">
         <div class="link__content__meta__category">${category}</div>
-        <div class="link__content__meta__author">${author}Jesse Johnes</div>
-        <div class="link__content__meta__time">${time}3 hours ago</div>
+        <div class="link__content__meta__author">${author}</div>
+        <div class="link__content__meta__time">${time}</div>
         <div class="link__content__meta__comments">
           ${comments && comments === 1 ? `${comments} comment` : `${comments} comments`}
         </div>

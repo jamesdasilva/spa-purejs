@@ -1,7 +1,6 @@
-import testing from './components/testing';
 import render from './render';
 import api from './api';
-import '../scss/style.scss';
+import './main.scss';
 import 'font-awesome/css/font-awesome.css';
 
 let root = document.querySelector('#root');

@@ -5,14 +5,12 @@
   "main": "./src/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
-    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:watch": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
     "server": "./node_modules/.bin/webpack-dev-server",
     "build": "./node_modules/.bin/webpack",
     "build:watch": "./node_modules/.bin/webpack -w",
     "build:prod": "./node_modules/.bin/webpack -p",
-    "lint": "./node_modules/.bin/eslint src/**/*.js",
-    "scss": "./node_modules/.bin/node-sass scss/style.scss > assets/style.css",
-    "scss:watch": "./node_modules/.bin/node-sass scss/style.scss -wo assets"
+    "lint": "./node_modules/.bin/eslint src/**/*.js"
   },
   "repository": {
     "type": "git",
