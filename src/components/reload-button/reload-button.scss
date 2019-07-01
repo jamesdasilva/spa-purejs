@@ -1,7 +1,4 @@
-.reload-button{
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.reload-btn{
   height: 60px;
   width: 100%;
   color: #e3472f;
@@ -12,4 +9,21 @@
   border-radius: 3px;
   cursor: pointer;
   margin: 60px 0 20px;
+}
+.reload-btn__icon-ctnr{
+  display: inline-block;
+}
+.reload-btn__icon-ctnr--spinning{
+  animation-name: rodar;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes rodar {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
 }

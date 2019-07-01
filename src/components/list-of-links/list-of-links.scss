@@ -2,6 +2,9 @@
   flex-grow: 2;
   flex-shrink: 2;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 .list-of-links__empty{
   width: 100%;
@@ -16,4 +19,25 @@
   min-height: 300px;
   line-height: 100px;
   text-align: center
+}
+.list-of-links__links{
+  overflow-y: scroll;
+}
+.list-of-links__links::-webkit-scrollbar-track
+{
+  border-radius: 3px;
+	background-color: #F5F5F5;
+}
+
+.list-of-links__links::-webkit-scrollbar
+{
+  border-radius: 3px;
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.list-of-links__links::-webkit-scrollbar-thumb
+{
+  border-radius: 3px;
+	background-color: $brand-primary;
 }

@@ -1,6 +1,7 @@
 const Layout = ({ state, Logo, Credits, FooterBrand, 
   ListOfLinks, User, AddPostButton, HamburguerButton, Search, Loading}) => {
-  const bodyContent = state.UI.isFetching ? Loading() : ListOfLinks(state);
+    console.log(state.data.links);
+  const bodyContent = state.UI.isFetching && !state.data.links ? Loading() : ListOfLinks(state);
   return `
     <div id="app">
       <div id="header">       

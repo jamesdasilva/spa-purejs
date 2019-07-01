@@ -3,8 +3,9 @@ import ReloadButton from '../reload-button/reload-button';
 
 const ListOfLinks = (state) => {
 
-  let {page, numberOfLinksPerPage} = state.UI;
-  let linkWithPagination = state.data.links ? state.data.links.slice((page - 1) * numberOfLinksPerPage, page * numberOfLinksPerPage) : [];
+  let {numberOfLinksPerPage} = state.UI;
+  let linkWithPagination = state.data.links ? state.data.links.slice(0, numberOfLinksPerPage) : [];
+  let index = 0;
   let links =  linkWithPagination.length > 0 ? linkWithPagination.map(item => Link({
     count: item.upvotes,
     title: item.meta.title,
@@ -13,11 +14,16 @@ const ListOfLinks = (state) => {
     comments: item.comments,
     author: item.meta.author,
     time: item.created_at,
+    position: ++index,
+    length: linkWithPagination.length,
+    isFetching: state.UI.isFetching
   })).join("") : `<div class="list-of-links__empty">não há resultados</div>`;   
   return `
   <div class="list-of-links">
-    ${links}
-    ${ReloadButton()}</div>`;
+    <div class="list-of-links__links">
+      ${links}
+    </div>
+    ${ReloadButton(state.UI.isFetching)}</div>`;
   
 }
 
