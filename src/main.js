@@ -1,50 +1,68 @@
-import render from './render';
+import pageMount from './helpers/page-mount';
+import storeFactory from './store-factory'
 import api from './api';
 import './main.scss';
 import 'font-awesome/css/font-awesome.css';
 
 let root = document.querySelector('#root');
+const store = storeFactory(root);
 
-let linksContainer;
-
-let state = {
+// estado inicial
+store.setState({
   data: {},
-  UI: {}
-};
-state.UI.page = 1;
-state.UI.numberOfLinksPerPage = 3;
-state.UI.isFetching = true;
-render(state);
-linksContainer = document.querySelector('.list-of-links__links');
-if(linksContainer)
-  linksContainer.scrollTop = linksContainer.scrollHeight;
-
-api().then((data) => {
-  setTimeout(() => {
-    root.dispatchEvent(new CustomEvent('refresh', { detail: data }));
-  }, 1000);
+  UI: {
+    qtdMaxOfLinks: 4,
+    qtdOfLinksLoaded: 3,
+    isFetching: true
+  }
 });
 
+// buscar dados persistidos
+api().then((newData) => {
+  store.setState({
+    ...store.getState(), 
+    data: {
+      ...newData
+    },
+    UI:{
+      ...store.getState().UI,
+      isFetching: false
+    }
+  });
+});
+
+// eventos
 root.addEventListener('refresh', (e) => {
-  state.data = e.detail;
-  state.UI.isFetching = false;
-  render(state);
-  linksContainer = document.querySelector('.list-of-links__links');
-  if(linksContainer)
-    linksContainer.scrollTop = linksContainer.scrollHeight;
-  document.querySelector('#reload-button')
-  .addEventListener('click', function(){
-    state.UI.isFetching = true;
-    state.UI.numberOfLinksPerPage++;
-    render(state);
-    linksContainer = document.querySelector('.list-of-links__links');
-    if(linksContainer)
-      linksContainer.scrollTop = linksContainer.scrollHeight;
-    api().then((data) => {
-      setTimeout(() => {
-        console.log("refresh", state);
-        root.dispatchEvent(new CustomEvent('refresh', { detail: data }));
-      }, 2000);
-    });
+  pageMount(e.detail, document).then(() => {
+
+    document.querySelector('#reload-button')
+      .addEventListener('click', function(){
+
+        store.setState({
+          ...store.getState(),
+          UI:{
+            ...store.getState().UI,
+            isFetching: true
+          }
+        });
+        setTimeout(()=>{
+          store.setState({
+            ...store.getState(),
+            UI:{
+              ...store.getState().UI,
+              qtdOfLinksLoaded: store.getState().UI.qtdOfLinksLoaded + 1
+            }
+          }, false);
+  
+          store.setState({
+            ...store.getState(),
+            UI:{
+              ...store.getState().UI,
+              isFetching: false
+            }
+          });
+        }, 2000);
+
+      });
   });
 });

@@ -3,8 +3,13 @@ import ReloadButton from '../reload-button/reload-button';
 
 const ListOfLinks = (state) => {
 
-  let {numberOfLinksPerPage} = state.UI;
-  let linkWithPagination = state.data.links ? state.data.links.slice(0, numberOfLinksPerPage) : [];
+  let {qtdOfLinksLoaded, qtdMaxOfLinks} = state.UI;
+  let indexLinksStart = qtdOfLinksLoaded > qtdMaxOfLinks ? qtdOfLinksLoaded - qtdMaxOfLinks : 0;
+  let indexLinksEnd = qtdOfLinksLoaded;
+
+  let linkWithPagination = state.data.links ? 
+                           state.data.links.slice(indexLinksStart, indexLinksEnd) : [];
+  
   let index = 0;
   let links =  linkWithPagination.length > 0 ? linkWithPagination.map(item => Link({
     count: item.upvotes,

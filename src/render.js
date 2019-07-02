@@ -9,7 +9,7 @@ import Search from './components/search/search';
 import ListOfLinks from './components/list-of-links/list-of-links';
 import Loading from './components/loading/loading'
 
-const render = (state) => {
+const render = (root, state) => {
   const layout = Layout({
     FooterBrand,
     Credits,
@@ -22,12 +22,12 @@ const render = (state) => {
     Loading,
     state
   });
-  const conatiner = document.querySelector('#root');
   const component = document.createRange().createContextualFragment(layout);
-  while (conatiner.firstChild) {
-    conatiner.removeChild(conatiner.firstChild);
+  while (root.firstChild) {
+    root.removeChild(root.firstChild);
   }
-  conatiner.appendChild(component);
+  root.appendChild(component);
+  return root;
 };
 
 export default render;
