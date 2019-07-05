@@ -7,10 +7,14 @@ import Logo from './components/logo/logo';
 import HamburguerButton from './components/hamburguer-button/hamburguer-button';
 import Search from './components/search/search';
 import ListOfLinks from './components/list-of-links/list-of-links';
-import Loading from './components/loading/loading'
+import Loading from './components/loading/loading';
 
-const render = (root, state) => {
-  const layout = Layout({
+import cleanContainer from './helpers/clean-container';
+import insertInContainer from './helpers/insert-in-container';
+
+const render = (container, state) => {
+  cleanContainer(container);
+  insertInContainer(document, container, Layout({
     FooterBrand,
     Credits,
     User,
@@ -21,13 +25,7 @@ const render = (root, state) => {
     ListOfLinks,
     Loading,
     state
-  });
-  const component = document.createRange().createContextualFragment(layout);
-  while (root.firstChild) {
-    root.removeChild(root.firstChild);
-  }
-  root.appendChild(component);
-  return root;
+  }));
 };
 
 export default render;

@@ -1,7 +1,6 @@
 const Layout = ({ state, Logo, Credits, FooterBrand, 
   ListOfLinks, User, AddPostButton, HamburguerButton, Search, Loading}) => {
-    console.log(state.data.links);
-  const bodyContent = state.UI.isFetching && !state.data.links ? Loading() : ListOfLinks(state);
+  const bodyContent = state.UI.isFetching ? Loading() : ListOfLinks(state);
   return `
     <div id="app">
       <div id="header">       
@@ -9,7 +8,7 @@ const Layout = ({ state, Logo, Credits, FooterBrand,
           <div class="header__box-left">
             ${Logo()}
             ${HamburguerButton()}
-            ${Search()}
+            ${Search(state.UI.searchTerm)}
           </div>
           <div class="header__box-right">
             ${User()}

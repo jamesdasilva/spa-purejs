@@ -1,4 +1,5 @@
 import Link from '../link/link';
+import LoadingLink from '../loading-link/loading-link';
 import ReloadButton from '../reload-button/reload-button';
 
 const ListOfLinks = (state) => {
@@ -7,8 +8,10 @@ const ListOfLinks = (state) => {
   let indexLinksStart = qtdOfLinksLoaded > qtdMaxOfLinks ? qtdOfLinksLoaded - qtdMaxOfLinks : 0;
   let indexLinksEnd = qtdOfLinksLoaded;
 
-  let linkWithPagination = state.data.links ? 
-                           state.data.links.slice(indexLinksStart, indexLinksEnd) : [];
+  let linkWithPagination = state.UI.links ? 
+                           state.UI.links.slice(indexLinksStart, indexLinksEnd) : [];
+
+  let LoadingLinkResult = state.UI.isFetching ? LoadingLink() : '';
   
   let index = 0;
   let links =  linkWithPagination.length > 0 ? linkWithPagination.map(item => Link({
@@ -27,6 +30,7 @@ const ListOfLinks = (state) => {
   <div class="list-of-links">
     <div class="list-of-links__links">
       ${links}
+      ${LoadingLinkResult}
     </div>
     ${ReloadButton(state.UI.isFetching)}</div>`;
   

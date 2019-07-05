@@ -1,12 +1,7 @@
-import LoadingLink from '../loading-link/loading-link'
-
 const Link = (props) => {
   const {
-    count, title, category, comments, time, url, author, position, length, isFetching
+    count, title, category, comments, time, url, author
   } = props;
-  if(isFetching && position > length - 1){
-    return LoadingLink();
-  }
   return `
   <div class="link">
     <div class="link__count-up">

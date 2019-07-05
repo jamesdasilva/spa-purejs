@@ -13,5 +13,4 @@ export default function (root){
     setState: setState,
     getState: getState
   }
-  
 }
