@@ -1,4 +1,4 @@
 import Search from './search.template';
-import SearchHandlers from './search.handlers';
+import searchHandlers from './search.handlers';
 
-export { Search, SearchHandlers };
+export { Search, searchHandlers };

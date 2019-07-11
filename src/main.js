@@ -12,9 +12,7 @@ import 'font-awesome/css/font-awesome.css';
 import render from './render';
 import LinksExplorer from './pages/links-explorer/links-explorer';
 
-import searchHanldlers from './components/search/search.handlers';
-import reloadButtonHandlers from './components/reload-button/reload-button.handlers';
-import { listOfLinksHandlers } from './components.list';
+import { appendDOMHandlers } from './components.list';
 
 window.addEventListener('load', function() {
 
@@ -38,9 +36,7 @@ window.addEventListener('load', function() {
   root.addEventListener('refresh', (e) => {
     render(root, e.detail, LinksExplorer, () => {
       if(document){
-        listOfLinksHandlers(document);
-        reloadButtonHandlers(document, store);
-        searchHanldlers(document, store);
+        appendDOMHandlers(document, store);
       }
     });
   });
