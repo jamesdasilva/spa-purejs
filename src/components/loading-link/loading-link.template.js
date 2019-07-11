@@ -1,3 +1,5 @@
+import './loading-link.scss';
+
 const LoadingLink = () => `
 <div class="loading-link">
   <div class="lds-ellipsis">

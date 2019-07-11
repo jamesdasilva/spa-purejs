@@ -1,3 +1,5 @@
+import './search.scss';
+
 const Search = (term) => `
   <div class="wrap">
     <div class="search">

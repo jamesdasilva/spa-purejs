@@ -1,3 +1,5 @@
+import './loading.scss'; 
+
 const Loading = () => `
 <div class="loading">
   <div class="lds-grid">

@@ -3,8 +3,9 @@ export default function (root){
   let containerHTML = root;
   let setState = function(newState, refresh = true){
     state = {...newState};
-    if(refresh)
+    if(refresh){
       containerHTML.dispatchEvent(new CustomEvent('refresh', { detail: state }));
+    }
   }
   let getState = function(){
     return {...state};

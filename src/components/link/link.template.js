@@ -1,3 +1,5 @@
+import './link.scss';
+
 const Link = (props) => {
   const {
     count, title, category, comments, time, url, author

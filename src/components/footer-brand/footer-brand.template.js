@@ -1,3 +1,5 @@
+import './footer-brand.scss';
+
 const FooterBrand = () => `
   <div class="footer__brand">
     <div class="footer__brand__logo">

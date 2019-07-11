@@ -1,3 +1,5 @@
+import './user.scss';
+
 const User = () => `
   <div class="user">
     <img class="user__image" src="https://picsum.photos/id/237/40/40" alt="" />

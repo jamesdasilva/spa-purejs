@@ -1,6 +1,7 @@
-import Link from '../link/link';
-import LoadingLink from '../loading-link/loading-link';
-import ReloadButton from '../reload-button/reload-button';
+import './list-of-links.scss';
+import { Link } from '../link/link.component';
+import { LoadingLink } from '../loading-link/loading-link.component';
+import { ReloadButton } from '../reload-button/reload-button.component';
 
 const ListOfLinks = (state) => {
 

@@ -1,7 +1,6 @@
-const scrollToBottom = (document) => {
-  let linksContainer = document.querySelector('.list-of-links__links');
-  if(linksContainer)
-    linksContainer.scrollTop = linksContainer.scrollHeight;
+const scrollToBottom = (cntnr) => {
+  if(cntnr)
+    cntnr.scrollTop = cntnr.scrollHeight;
 }
 
 export default scrollToBottom;

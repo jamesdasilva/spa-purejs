@@ -1,3 +1,5 @@
+import './reload-button.scss';
+
 const ReloadButton = (isFetching) => `
   <div class="reload-btn" id="reload-button">
     <span class="reload-btn__icon-ctnr${isFetching ? ' reload-btn__icon-ctnr--spinning' : ''}">

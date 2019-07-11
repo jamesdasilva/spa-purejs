@@ -1,6 +1,6 @@
-const Layout = ({ state, Logo, Credits, FooterBrand, 
+const LinksExplorer = ({ state, Logo, Credits, FooterBrand, 
   ListOfLinks, User, AddPostButton, HamburguerButton, Search, Loading}) => {
-  const bodyContent = state.UI.isFetching ? Loading() : ListOfLinks(state);
+  const bodyContent = state.UI.isFetching && state.UI.links.length == 0 ? Loading() : ListOfLinks(state);
   return `
     <div id="app">
       <div id="header">       
@@ -34,4 +34,4 @@ const Layout = ({ state, Logo, Credits, FooterBrand,
     </div>`;
 }
 
-export default Layout;
+export default LinksExplorer;

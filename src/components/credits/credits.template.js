@@ -1,3 +1,5 @@
+import './credits.scss';
+
 const Credits = () => `
   <div class="credits">
     <div class="credits__links">
