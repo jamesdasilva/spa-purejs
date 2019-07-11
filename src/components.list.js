@@ -2,7 +2,7 @@ import { AddPostButton } from './components/add-post-button/add-post-button.comp
 import { Credits } from './components/credits/credits.component';
 import { FooterBrand } from './components/footer-brand/footer-brand.component';
 import { HamburguerButton } from './components/hamburguer-button/hamburguer-button.component';
-import { Link } from './components/link/link.component';
+import { Link, linkHandlers } from './components/link/link.component';
 import { ListOfLinks, listOfLinksHandlers } from './components/list-of-links/list-of-links.component';
 import { Loading } from './components/loading/loading.component';
 import { LoadingLink } from './components/loading-link/loading-link.component';
@@ -30,6 +30,7 @@ const appendDOMHandlers = (document, store) => {
   listOfLinksHandlers(document);
   reloadButtonHandlers(document, store);
   searchHandlers(document, store);
+  linkHandlers(document, store);
 };
 
 export { appendDOMHandlers }; 

@@ -1,13 +1,11 @@
 import './list-of-links.scss';
-import { Link } from '../link/link.component';
-import { LoadingLink } from '../loading-link/loading-link.component';
-import { ReloadButton } from '../reload-button/reload-button.component';
 
-const ListOfLinks = (state) => {
+const ListOfLinks = (state, components) => {
 
-  let {qtdOfLinksLoaded, qtdMaxOfLinks} = state.UI;
-  let indexLinksStart = qtdOfLinksLoaded > qtdMaxOfLinks ? qtdOfLinksLoaded - qtdMaxOfLinks : 0;
-  let indexLinksEnd = qtdOfLinksLoaded;
+  const { ReloadButton, LoadingLink, Link } = components;
+  const { qtdOfLinksLoaded, qtdMaxOfLinks } = state.UI;
+  const indexLinksStart = qtdOfLinksLoaded > qtdMaxOfLinks ? qtdOfLinksLoaded - qtdMaxOfLinks : 0;
+  const indexLinksEnd = qtdOfLinksLoaded;
 
   let linkWithPagination = state.UI.links ? 
                            state.UI.links.slice(indexLinksStart, indexLinksEnd) : [];
