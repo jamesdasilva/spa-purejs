@@ -1,5 +1,9 @@
 # Teste Frontend Leroy Merlin Brasil
 
+### Front End Architecture
+
+![Architecture Model](arquitetura-app.png)
+
 ### Executando os testes
 
 Executar um teste:
