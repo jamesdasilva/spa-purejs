@@ -3,7 +3,7 @@ const getSearch = (state) => {
   let { searchTerm, initialQtd, offset } = state.UI;
   let searchTermUpperCase = searchTerm.toUpperCase();
   const searchResult = 
-    links.filter(
+      Array.isArray(links) && links.length > 0 && links.filter(
       item => new RegExp(`^.*${searchTermUpperCase}.*$`).test(item.meta.title.toUpperCase())
     );
     

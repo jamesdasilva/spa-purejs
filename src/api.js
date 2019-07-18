@@ -1,4 +1,13 @@
-const api = () => fetch('https://www.mocky.io/v2/5a6bc16631000078341b8b77')
-  .then((response) => response.json());
+const api = () => fetch(
+  'http://localhost:3000/links', 
+  {
+
+  })
+  .then((response) => {
+    return response.json();
+  }).then((data) => {
+    console.log(data);
+    return data;
+  });
 
 export default api;

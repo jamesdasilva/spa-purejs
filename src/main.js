@@ -25,6 +25,7 @@ window.addEventListener('load', function() {
   // buscar dados persistidos
   store.setState(setIsFetching(store.getState()));
   api().then((newData) => {
+    this.console.log("newData", newData);
     store.setState(setNewData(store.getState(), newData), true);
     store.setState(getSearch(store.getState()), false);
     setTimeout(() => {

@@ -2,7 +2,7 @@ const setNewData = (state, newData) => {
   return {
     ...state, 
     data: {
-      ...newData
+      links: newData
     }
   };
 }
