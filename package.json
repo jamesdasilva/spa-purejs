@@ -6,12 +6,12 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha ./**/*.spec.js --require babel-register --require ignore-styles --require jsdom-global/register",
     "test:watch": "./node_modules/.bin/mocha ./**/*.spec.js --require babel-register  --require ignore-styles --require jsdom-global/register --watch",
-    "server": "npm run api-server & ./node_modules/.bin/webpack-dev-server",
     "build": "./node_modules/.bin/webpack",
     "build:watch": "./node_modules/.bin/webpack -w",
     "build:prod": "./node_modules/.bin/webpack -p",
     "lint": "./node_modules/.bin/eslint src/**/*.js",
-    "api-server": "./node_modules/.bin/json-server --watch mocks/data.json --port 3000"
+    "api-server": "./node_modules/.bin/json-server --watch mocks/data.json --port 3000",
+    "server": "npm run api-server & ./node_modules/.bin/webpack-dev-server"
   },
   "repository": {
     "type": "git",
