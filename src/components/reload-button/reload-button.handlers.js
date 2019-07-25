@@ -9,20 +9,17 @@ const reloadButtonHandlers = (document, store, fetchLinks) => {
   document.querySelector('#reload-button')
     .addEventListener('click', function() {
       store.setState(loadMore(store.getState()), false);
-      const paramers = generateParamsFetchLinks(store.getState());
       store.setState(setIsFetching(store.getState()));
-      console.log("state 1 ", store.getState());
+      const paramers = generateParamsFetchLinks(store.getState());
       setTimeout(() => {
         fetchLinks(paramers).then((newData) => {
           store.setState(setTotalCount(store.getState(), newData.count), false);
           newData.links.then(links => {
             store.setState(setNewData({ ...store.getState() }, links));
             store.setState(clearIsFetching(store.getState()));
-            console.log("state 2", store.getState());
           });
         });
-      }, 2000);
-      
+      }, 1000);
     });
 }
 

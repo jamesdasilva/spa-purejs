@@ -11,8 +11,6 @@ const ListOfLinks = (state, components) => {
                            state.UI.links.slice(indexLinksStart, indexLinksEnd) : [];
 
   let LoadingLinkResult = state.UI.isFetching ? LoadingLink() : '';
-
-  console.log(linkWithPagination);
   
   let links =  linkWithPagination.length > 0 ? linkWithPagination.map(item => Link({
     count: item.upvotes,
