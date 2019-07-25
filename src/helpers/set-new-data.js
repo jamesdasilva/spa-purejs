@@ -1,7 +1,8 @@
 const setNewData = (state, newData) => {
   return {
     ...state, 
-    data: {
+    UI: {
+      ...state.UI,
       links: newData
     }
   };

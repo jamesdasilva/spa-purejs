@@ -11,8 +11,9 @@ const ListOfLinks = (state, components) => {
                            state.UI.links.slice(indexLinksStart, indexLinksEnd) : [];
 
   let LoadingLinkResult = state.UI.isFetching ? LoadingLink() : '';
+
+  console.log(linkWithPagination);
   
-  let index = 0;
   let links =  linkWithPagination.length > 0 ? linkWithPagination.map(item => Link({
     count: item.upvotes,
     title: item.meta.title,
@@ -21,7 +22,7 @@ const ListOfLinks = (state, components) => {
     comments: item.comments,
     author: item.meta.author,
     time: item.created_at,
-    position: ++index,
+    position: item.id,
     length: linkWithPagination.length,
     isFetching: state.UI.isFetching
   })).join("") : `<div class="list-of-links__empty">não há resultados</div>`;   

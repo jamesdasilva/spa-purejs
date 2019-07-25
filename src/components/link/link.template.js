@@ -2,11 +2,11 @@ import './link.scss';
 
 const Link = (props) => {
   const {
-    count, title, category, comments, time, url, author
+    count, title, category, comments, time, url, author, position
   } = props;
   return `<div class="link">
       <div class="link__count-up">
-        <div class="link__count-up__icon" data-link-url="${url}"><i class="fa fa-angle-up"></i></div>
+        <div class="link__count-up__icon" data-link-id="${position}"><i class="fa fa-angle-up"></i></div>
         <div class="link__count-up__number">${count}</div>
       </div>
       <div class="link__content">

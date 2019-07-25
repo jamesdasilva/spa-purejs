@@ -1,14 +1,18 @@
 .reload-btn{
   height: 60px;
   width: 100%;
-  color: #e3472f;
-  background-color: rgb(244, 244, 241);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 60px 0 20px;
+  border-radius: 3px;
+  border: 0;
   line-height: 60px;
   text-align: center;
-  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(244, 244, 241);
+  color: #e3472f;
   cursor: pointer;
-  margin: 60px 0 20px;
+  &:focus {
+    outline-width: 0;
+  }
 }
 .reload-btn__icon-ctnr{
   display: inline-block;

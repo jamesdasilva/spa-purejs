@@ -11,6 +11,9 @@ import { ReloadButton, reloadButtonHandlers } from './components/reload-button/r
 import { Search, searchHandlers } from './components/search/search.component';
 import { User } from './components/user/user.component';
 
+import fetchLinks from './fetch-links';
+
+
 const components = {
   AddPostButton,
   Credits,
@@ -28,7 +31,7 @@ const components = {
 
 const appendDOMHandlers = (document, store) => {
   listOfLinksHandlers(document);
-  reloadButtonHandlers(document, store);
+  reloadButtonHandlers(document, store, fetchLinks);
   searchHandlers(document, store);
   linkHandlers(document, store);
 };
