@@ -10,7 +10,7 @@
       "category": "discussion",
       "comments": 3,
       "created_at": "1459857600",
-      "upvotes": 28
+      "upvotes": 35
     },
     {
       "meta": {
@@ -33,7 +33,7 @@
       "category": "case_study",
       "comments": 8,
       "created_at": "1459858600",
-      "upvotes": 77,
+      "upvotes": 78,
       "id": 3
     },
     {
@@ -46,7 +46,7 @@
       "category": "discussion",
       "comments": 8,
       "created_at": "1459858600",
-      "upvotes": 30
+      "upvotes": 36
     },
     {
       "id": 5,
@@ -58,7 +58,7 @@
       "category": "discussion",
       "comments": 8,
       "created_at": "1459857900",
-      "upvotes": 36
+      "upvotes": 115
     },
     {
       "id": 6,
@@ -94,7 +94,7 @@
       "category": "discussion",
       "comments": 7,
       "created_at": "1459857900",
-      "upvotes": 10
+      "upvotes": 11
     },
     {
       "id": 9,
@@ -178,7 +178,7 @@
       "category": "case_study",
       "comments": 9,
       "created_at": "1459857900",
-      "upvotes": 7
+      "upvotes": 8
     },
     {
       "id": 16,
@@ -190,7 +190,7 @@
       "category": "case_study",
       "comments": 6,
       "created_at": "1459857600",
-      "upvotes": 3
+      "upvotes": 5
     },
     {
       "id": 17,
