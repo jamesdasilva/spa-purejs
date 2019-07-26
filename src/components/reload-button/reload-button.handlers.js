@@ -20,6 +20,7 @@ const reloadButtonHandlers = (document, store, fetchLinks) => {
           });
         });
       }, 1000);
+      console.log(store.getState());
     });
 }
 

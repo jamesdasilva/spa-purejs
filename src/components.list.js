@@ -30,7 +30,7 @@ const components = {
 };
 
 const appendDOMHandlers = (document, store) => {
-  listOfLinksHandlers(document);
+  listOfLinksHandlers(document, store);
   reloadButtonHandlers(document, store, fetchLinks);
   searchHandlers(document, store);
   linkHandlers(document, store);

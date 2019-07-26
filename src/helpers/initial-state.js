@@ -9,7 +9,9 @@ const initialState = () => {
       initialQtd: 3,
       qtdTotal: 0,
       isFetching: false,
-      sort: false
+      sort: false,
+      scrollActive: true,
+      scroll: 0
     }
   };
 }

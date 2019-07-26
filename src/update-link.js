@@ -7,7 +7,7 @@ const updateLink = ({linkId, data}) => {
     body: JSON.stringify(data),
     headers: new Headers({
       'Content-Type': 'application/json'
-    }),
+    })
   })
   .then((response) => {
     return response.json();
