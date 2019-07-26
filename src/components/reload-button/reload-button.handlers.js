@@ -8,8 +8,8 @@ import cleanScrollActive from '../../helpers/clean-scroll-active';
 import setScrollActive from '../../helpers/set-scroll-active';
 
 const reloadButtonHandlers = (document, store, fetchLinks) => {
-  document.querySelector('#reload-button')
-    .addEventListener('click', function() {
+  const button = document.querySelector('#reload-button');
+  button && button.addEventListener('click', function() {
       store.setState(setScrollActive(store.getState(), 'bottom'), false);
       store.setState(loadMore(store.getState()), false);
       store.setState(setIsFetching(store.getState()));

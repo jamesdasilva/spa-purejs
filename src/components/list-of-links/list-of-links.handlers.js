@@ -4,7 +4,6 @@ import setScroll from '../../helpers/set-scroll';
 
 const listOfLinksHandlers = (document, store) => {
   let linksContainer = document.querySelector('.list-of-links__links');
-  console.log('state ', store.getState().UI.scrollActive);
   if(!store.getState().UI.scrollActive){
     scrollTo(linksContainer, store.getState().UI.scroll);
   }else{
@@ -17,9 +16,8 @@ const listOfLinksHandlers = (document, store) => {
         break;
     }
   }
-  document.querySelector('.list-of-links__links')
-    .addEventListener('scroll', function() {
-      let scroll = document.querySelector('.list-of-links__links').scrollTop;
+  linksContainer && linksContainer.addEventListener('scroll', function() {
+      let scroll = linksContainer.scrollTop;
       store.setState(setScroll(store.getState(), scroll), false);
     });
 }

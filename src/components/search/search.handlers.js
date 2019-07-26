@@ -12,8 +12,8 @@ import cleanScrollActive from '../../helpers/clean-scroll-active';
 import setScrollActive from '../../helpers/set-scroll-active';
 
 const searchHandlers = (document, store) => {
-  document.querySelector('#search-term')
-  .addEventListener('input', function(e){
+  const search = document.querySelector('#search-term');
+  search && search.addEventListener('input', function(e){
     store.setState(updateSearchTerm(store.getState(), this.value), false);
     store.setState(setIsFetching(store.getState()));
       const paramers = generateParamsFetchLinks(store.getState());
@@ -30,12 +30,11 @@ const searchHandlers = (document, store) => {
   
 
   if(store.getState().UI.searchFocus){
-    document.querySelector('#search-term').focus();
-    moveCursorToEnd(document.querySelector('#search-term')); 
+    search.focus();
+    moveCursorToEnd(search); 
   }
 
-  /* document.querySelector('#search-term')
-  .addEventListener('blur', function(){
+  /* search.addEventListener('blur', function(){
     console.log("focus 2", store.getState().UI.searchFocus);
     store.setState(cleanFocus(store.getState()), false);
   }); */
