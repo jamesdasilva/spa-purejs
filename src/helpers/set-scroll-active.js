@@ -1,9 +1,9 @@
-const setScrollActive = (state) => {
+const setScrollActive = (state, mode) => {
   return {
     ...state,
     UI:{
       ...state.UI,
-      scrollActive: true
+      scrollActive: mode
     }
   };
 }

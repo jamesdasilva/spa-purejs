@@ -4,10 +4,13 @@ import clearIsFetching from '../../helpers/clear-is-fetching';
 import loadMore from '../../helpers/load-more';
 import setTotalCount from '../../helpers/set-total-count';
 import setNewData from '../../helpers/set-new-data';
+import cleanScrollActive from '../../helpers/clean-scroll-active';
+import setScrollActive from '../../helpers/set-scroll-active';
 
 const reloadButtonHandlers = (document, store, fetchLinks) => {
   document.querySelector('#reload-button')
     .addEventListener('click', function() {
+      store.setState(setScrollActive(store.getState(), 'bottom'), false);
       store.setState(loadMore(store.getState()), false);
       store.setState(setIsFetching(store.getState()));
       const paramers = generateParamsFetchLinks(store.getState());

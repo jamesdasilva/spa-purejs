@@ -7,6 +7,9 @@ import clearIsFetching from '../../helpers/clear-is-fetching';
 import setTotalCount from '../../helpers/set-total-count';
 import setNewData from '../../helpers/set-new-data';
 import fetchLinks from '../../fetch-links';
+import scrollTo from '../../helpers/scroll-to';
+import cleanScrollActive from '../../helpers/clean-scroll-active';
+import setScrollActive from '../../helpers/set-scroll-active';
 
 const searchHandlers = (document, store) => {
   document.querySelector('#search-term')
@@ -17,11 +20,14 @@ const searchHandlers = (document, store) => {
       fetchLinks(paramers).then((newData) => {
         store.setState(setTotalCount(store.getState(), newData.count), false);
         newData.links.then(links => {
+          store.setState(setScrollActive(store.getState(), 'top'), false);
           store.setState(setNewData({ ...store.getState() }, links));
           store.setState(clearIsFetching(store.getState()));
         });
       });
   });
+
+  
 
   if(store.getState().UI.searchFocus){
     document.querySelector('#search-term').focus();

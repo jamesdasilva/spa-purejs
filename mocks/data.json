@@ -21,7 +21,7 @@
       "category": "case_study",
       "comments": 8,
       "created_at": "1459858600",
-      "upvotes": 75,
+      "upvotes": 78,
       "id": 2
     },
     {
@@ -33,7 +33,7 @@
       "category": "case_study",
       "comments": 8,
       "created_at": "1459858600",
-      "upvotes": 78,
+      "upvotes": 89,
       "id": 3
     },
     {
@@ -130,7 +130,7 @@
       "category": "product_design",
       "comments": 9,
       "created_at": "1459857600",
-      "upvotes": 6
+      "upvotes": 7
     },
     {
       "id": 12,
@@ -238,7 +238,7 @@
       "category": "ux_ui",
       "comments": 7,
       "created_at": "1459858600",
-      "upvotes": 7
+      "upvotes": 8
     }
   ]
 }

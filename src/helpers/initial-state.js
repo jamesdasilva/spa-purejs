@@ -6,11 +6,11 @@ const initialState = () => {
       links: [],
       offset: 0,
       qtdMaxOfLinks: 10,
-      initialQtd: 3,
+      initialQtd: 5,
       qtdTotal: 0,
       isFetching: false,
       sort: false,
-      scrollActive: true,
+      scrollActive: 'top',
       scroll: 0
     }
   };

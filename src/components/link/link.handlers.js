@@ -26,7 +26,7 @@ const linkHandlers = (document, store) => {
           newData.links.then(links => {
             store.setState(cleanScrollActive(store.getState()), false);
             store.setState(setNewData({ ...store.getState() }, links));
-            store.setState(setScrollActive(store.getState()), false);
+            store.setState(setScrollActive(store.getState(), true), false);
           });
         });
       });
