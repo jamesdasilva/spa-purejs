@@ -1,4 +1,4 @@
-const getIsFetching = (state) => {
+const setIsFetching = (state) => {
   return {
     ...state,
     UI:{
@@ -8,5 +8,5 @@ const getIsFetching = (state) => {
   };
 }
 
-export default getIsFetching;
+export default setIsFetching;
   

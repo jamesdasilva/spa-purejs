@@ -19,8 +19,7 @@ const reloadButtonHandlers = (document, store, fetchLinks) => {
             store.setState(clearIsFetching(store.getState()));
           });
         });
-      }, 1000);
-      console.log(store.getState());
+      }, 500);
     });
 }
 

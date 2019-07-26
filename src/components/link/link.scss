@@ -44,6 +44,12 @@
   text-align: center;
   color: $brand-primary;
   cursor: pointer;
+  &:hover{
+    background-color: #eee
+  }
+  &:active i{
+    transform: translate(0, -4px);
+  }
 }
 .link__count-up__number{
   box-sizing: border-box;

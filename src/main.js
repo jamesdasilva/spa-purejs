@@ -34,7 +34,7 @@ window.addEventListener('load', function() {
       store.setState(setNewData({ ...store.getState() }, links), true);
       setTimeout(() => {
         store.setState(clearIsFetching(store.getState()));
-      }, 2000);
+      }, 500);
     });
   });
 
