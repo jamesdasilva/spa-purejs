@@ -2,7 +2,7 @@ const fetchLinks = ({start, end, sort, searchTerm}) => {
   const baseUrl = 'http://localhost:3000/links';
   const path = [];
   if(start){
-    path.push(`_start=${start}`);
+    path.push(`_start=${start - 1}`);
   }
   if(end){
     path.push(`_end=${end}`);
@@ -14,6 +14,7 @@ const fetchLinks = ({start, end, sort, searchTerm}) => {
     path.push(`q=${searchTerm}`);
   }
   const url = `${baseUrl}?${path.join('&')}`;
+  console.log("url ", url);
   return fetch(url)
   .then((response) => {
     return {

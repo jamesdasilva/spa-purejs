@@ -8,7 +8,6 @@ import setTotalCount from '../../helpers/set-total-count';
 import setNewData from '../../helpers/set-new-data';
 import fetchLinks from '../../fetch-links';
 import scrollTo from '../../helpers/scroll-to';
-import cleanScrollActive from '../../helpers/clean-scroll-active';
 import setScrollActive from '../../helpers/set-scroll-active';
 
 const searchHandlers = (document, store) => {

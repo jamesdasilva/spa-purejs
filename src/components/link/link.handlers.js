@@ -22,6 +22,7 @@ const linkHandlers = (document, store) => {
       }).then(() => {
         const paramers = generateParamsFetchLinks(store.getState());
         fetchLinks(paramers).then((newData) => {
+          store.setState(cleanScrollActive(store.getState()), false);
           store.setState(setTotalCount(store.getState(), newData.count), false);
           newData.links.then(links => {
             store.setState(cleanScrollActive(store.getState()), false);

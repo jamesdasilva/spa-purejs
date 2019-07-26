@@ -10,7 +10,7 @@
       "category": "discussion",
       "comments": 3,
       "created_at": "1459857600",
-      "upvotes": 35
+      "upvotes": 36
     },
     {
       "meta": {
@@ -21,7 +21,7 @@
       "category": "case_study",
       "comments": 8,
       "created_at": "1459858600",
-      "upvotes": 78,
+      "upvotes": 82,
       "id": 2
     },
     {
@@ -33,7 +33,7 @@
       "category": "case_study",
       "comments": 8,
       "created_at": "1459858600",
-      "upvotes": 89,
+      "upvotes": 95,
       "id": 3
     },
     {
@@ -82,7 +82,7 @@
       "category": "ux_ui",
       "comments": 7,
       "created_at": "1459857600",
-      "upvotes": 10
+      "upvotes": 12
     },
     {
       "id": 8,
@@ -118,7 +118,7 @@
       "category": "case_study",
       "comments": 3,
       "created_at": "1459857600",
-      "upvotes": 9
+      "upvotes": 10
     },
     {
       "id": 11,
@@ -142,7 +142,7 @@
       "category": "case_study",
       "comments": 5,
       "created_at": "1459857900",
-      "upvotes": 20
+      "upvotes": 21
     },
     {
       "id": 13,
