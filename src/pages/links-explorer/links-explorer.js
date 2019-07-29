@@ -1,6 +1,6 @@
 const LinksExplorer = (components) => {
   const { state, Logo, Credits, FooterBrand, 
-    ListOfLinks, User, AddPostButton, HamburguerButton, Search, Loading} = components;
+    ListOfLinks, User, AddPostButton, FiltersLinks, Search, Loading} = components;
   const bodyContent = state.UI.isFetching && state.UI.links.length == 0 ? Loading() : ListOfLinks(state, components);
   return `
     <div id="app">
@@ -8,7 +8,7 @@ const LinksExplorer = (components) => {
         <div class="header__container">
           <div class="header__box-left">
             ${Logo()}
-            ${HamburguerButton()}
+            ${FiltersLinks()}
             ${Search(state.UI.searchTerm)}
           </div>
           <div class="header__box-right">

@@ -2,6 +2,7 @@ import { AddPostButton } from './components/add-post-button/add-post-button.comp
 import { Credits } from './components/credits/credits.component';
 import { FooterBrand } from './components/footer-brand/footer-brand.component';
 import { HamburguerButton } from './components/hamburguer-button/hamburguer-button.component';
+import { FiltersLinks } from './components/filters-links/filters-links.component';
 import { Link, linkHandlers } from './components/link/link.component';
 import { ListOfLinks, listOfLinksHandlers } from './components/list-of-links/list-of-links.component';
 import { Loading } from './components/loading/loading.component';
@@ -19,6 +20,7 @@ const components = {
   Credits,
   FooterBrand,
   HamburguerButton,
+  FiltersLinks,
   Link,
   ListOfLinks,
   Loading,

@@ -11,7 +11,8 @@ const initialState = () => {
       isFetching: false,
       sort: false,
       scrollActive: 'top',
-      scroll: 0
+      scroll: 0,
+      displayFilters: false
     }
   };
 }
