@@ -24,27 +24,34 @@ window.addEventListener('load', function() {
   store.setState(initialState(), false);
 
   // buscar dados persistidos
-  store.setState(setIsFetching(store.getState()));
+  const synchronize = (state) => {
+    store.setState(setIsFetching(store.getState()));
 
-  const paramers = generateParamsFetchLinks(store.getState());
+    const paramers = generateParamsFetchLinks(store.getState());
+    setTimeout(() => {
+      fetchLinks(paramers).then((newData) => {
+        store.setState(setTotalCount(store.getState(), newData.count), false);
+        newData.links.then(links => {
+          store.setState(setNewData({ ...store.getState() }, links), true);
+          store.setState(clearIsFetching(store.getState()));
+        });
+      });
+    }, 500);
+  }
 
-  fetchLinks(paramers).then((newData) => {
-    store.setState(setTotalCount(store.getState(), newData.count), false);
-    newData.links.then(links => {
-      store.setState(setNewData({ ...store.getState() }, links), true);
-      setTimeout(() => {
-        store.setState(clearIsFetching(store.getState()));
-      }, 500);
-    });
-  });
+  //synchronize(store);
+
+  store.subscribe('synchronize', synchronize);
 
   // eventos
-  root.addEventListener('refresh', (e) => {
-    render(root, e.detail, LinksExplorer, () => {
+  store.subscribe('update', (state) => {
+    render(root, state, LinksExplorer, () => {
       if(document){
         appendDOMHandlers(document, store);
       }
     });
   });
+
+  store.fire('synchronize');
 
 });

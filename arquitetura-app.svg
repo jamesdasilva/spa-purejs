@@ -29,7 +29,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.7914233"
-     inkscape:cx="228.73729"
+     inkscape:cx="585.99511"
      inkscape:cy="93.897304"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -406,7 +406,7 @@
        width="21.009121"
        height="3.5101919"
        x="-162.84099"
-       y="125.68018"
+       y="125.15102"
        style="fill:#ff80b2;stroke-width:0.03854654"
        transform="scale(-1,1)" />
     <path
@@ -426,16 +426,16 @@
        d="m 11.546909,184.71625 -5.9794606,-5.18196 -6.21230274,-4.9004 7.47743954,-2.58739 7.3500248,-2.92981 -1.497978,7.76935 z"
        inkscape:transform-center-x="1.9897475"
        inkscape:transform-center-y="0.55332651"
-       transform="matrix(-0.28418816,0.35207623,0.35207623,0.28418816,80.875123,74.681031)" />
+       transform="matrix(-0.28418816,0.35207623,0.35207623,0.28418816,80.875123,74.151864)" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:1.72973394px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04324339"
        x="141.9189"
-       y="127.96055"
+       y="127.43138"
        id="text3737-23-75-2"><tspan
          sodipodi:role="line"
          x="141.9189"
-         y="127.96055"
+         y="127.43138"
          style="fill:#000000;stroke-width:0.04324339"
          id="tspan131">dispatch update event</tspan></text>
     <rect
@@ -580,7 +580,7 @@
        width="22.63376"
        height="3.5101922"
        x="132.52274"
-       y="119.09899"
+       y="118.56982"
        style="fill:#ff80b2;stroke-width:0.0400092" />
     <path
        sodipodi:type="star"
@@ -599,16 +599,16 @@
        d="m 11.546909,184.71625 -5.9794606,-5.18196 -6.21230274,-4.9004 7.47743954,-2.58739 7.3500248,-2.92981 -1.497978,7.76935 z"
        inkscape:transform-center-x="-1.9897455"
        inkscape:transform-center-y="0.55332455"
-       transform="matrix(0.28418816,0.35207623,-0.35207623,0.28418816,216.38414,68.099843)" />
+       transform="matrix(0.28418816,0.35207623,-0.35207623,0.28418816,216.38414,67.570676)" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:1.84655488px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.04616395"
        x="133.89"
-       y="121.35515"
+       y="120.82598"
        id="text3737-23-75-2-2"><tspan
          sodipodi:role="line"
          x="133.89"
-         y="121.35515"
+         y="120.82598"
          style="fill:#000000;stroke-width:0.04616395"
          id="tspan131-0">subscribe in update event</tspan></text>
     <rect

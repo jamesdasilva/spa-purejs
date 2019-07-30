@@ -12,17 +12,7 @@ const reloadButtonHandlers = (document, store, fetchLinks) => {
   button && button.addEventListener('click', function() {
       store.setState(setScrollActive(store.getState(), 'bottom'), false);
       store.setState(loadMore(store.getState()), false);
-      store.setState(setIsFetching(store.getState()));
-      const paramers = generateParamsFetchLinks(store.getState());
-      setTimeout(() => {
-        fetchLinks(paramers).then((newData) => {
-          store.setState(setTotalCount(store.getState(), newData.count), false);
-          newData.links.then(links => {
-            store.setState(setNewData({ ...store.getState() }, links));
-            store.setState(clearIsFetching(store.getState()));
-          });
-        });
-      }, 500);
+      store.fire('synchronize');
     });
 }
 

@@ -1,6 +1,8 @@
 const LinksExplorer = (components) => {
+
   const { state, Logo, Credits, FooterBrand, 
     ListOfLinks, User, AddPostButton, FiltersLinks, Search, Loading} = components;
+    
   const bodyContent = state.UI.isFetching && state.UI.links.length == 0 ? Loading() : ListOfLinks(state, components);
   return `
     <div id="app">
