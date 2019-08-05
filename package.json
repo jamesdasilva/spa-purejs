@@ -12,6 +12,7 @@
     "build:prod": "./node_modules/.bin/webpack -p",
     "lint": "./node_modules/.bin/eslint src/**/*.js",
     "api-server": "./node_modules/.bin/json-server --watch mocks/data.json --port 3000",
+    "report-complexity": "./node_modules/.bin/es6-plato -r -d ./quality/complexity-report src",
     "report-performance": "./node_modules/.bin/lighthouse http://localhost:8080/ --output html --output-path ./quality/lighthouse-report.html"
   },
   "repository": {
@@ -34,6 +35,7 @@
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "css-loader": "^3.0.0",
+    "es6-plato": "^1.2.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
