@@ -1,6 +1,7 @@
 const scrollTo = (cntnr, newScroll) => {
-  if(cntnr)
+  if (cntnr) {
     cntnr.scrollTop = newScroll;
-}
+  }
+};
 
 export default scrollTo;

@@ -1,12 +1,9 @@
-const setNewData = (state, newData) => {
-  return {
-    ...state, 
-    UI: {
-      ...state.UI,
-      links: newData
-    }
-  };
-}
+const setNewData = (state, newData) => ({
+  ...state,
+  UI: {
+    ...state.UI,
+    links: newData,
+  },
+});
 
 export default setNewData;
-  

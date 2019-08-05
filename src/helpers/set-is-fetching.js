@@ -1,12 +1,9 @@
-const setIsFetching = (state) => {
-  return {
-    ...state,
-    UI:{
-      ...state.UI,
-      isFetching: true
-    }
-  };
-}
+const setIsFetching = state => ({
+  ...state,
+  UI: {
+    ...state.UI,
+    isFetching: true,
+  },
+});
 
 export default setIsFetching;
-  

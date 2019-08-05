@@ -1,12 +1,9 @@
-const setScrollActive = (state, mode) => {
-  return {
-    ...state,
-    UI:{
-      ...state.UI,
-      scrollActive: mode
-    }
-  };
-}
+const setScrollActive = (state, mode) => ({
+  ...state,
+  UI: {
+    ...state.UI,
+    scrollActive: mode,
+  },
+});
 
 export default setScrollActive;
-    

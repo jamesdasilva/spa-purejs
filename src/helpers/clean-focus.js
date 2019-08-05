@@ -1,12 +1,9 @@
-const cleanFocus = (state) => {
-  return {
-    ...state,
-    UI:{
-      ...state.UI,
-      searchFocus: false
-    }
-  };
-};
+const cleanFocus = state => ({
+  ...state,
+  UI: {
+    ...state.UI,
+    searchFocus: false,
+  },
+});
 
 export default cleanFocus;
-  

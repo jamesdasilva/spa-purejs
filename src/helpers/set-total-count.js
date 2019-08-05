@@ -1,11 +1,9 @@
-const setTotalCount = (state, totalCount) => {
-  return {
-    ...state,
-    UI:{
-      ...state.UI,
-      qtdTotal: parseInt(totalCount)
-    }
-  }
-};
+const setTotalCount = (state, totalCount) => ({
+  ...state,
+  UI: {
+    ...state.UI,
+    qtdTotal: parseInt(totalCount),
+  },
+});
 
 export default setTotalCount;

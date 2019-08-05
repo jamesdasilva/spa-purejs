@@ -26,7 +26,6 @@ window.addEventListener('load', function() {
   // buscar dados persistidos
   const synchronize = (state) => {
     store.setState(setIsFetching(store.getState()));
-
     const paramers = generateParamsFetchLinks(store.getState());
     setTimeout(() => {
       fetchLinks(paramers).then((newData) => {

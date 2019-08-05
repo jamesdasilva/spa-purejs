@@ -1,25 +1,20 @@
 const getSearch = (state) => {
-  let { links } = state.data;
-  let { searchTerm, initialQtd, offset } = state.UI;
-  let searchTermUpperCase = searchTerm.toUpperCase();
-  const searchResult = 
-      Array.isArray(links) && links.length > 0 && links.filter(
-      item => new RegExp(`^.*${searchTermUpperCase}.*$`).test(item.meta.title.toUpperCase())
-    );
-    
-  let qtdTotal = searchResult.length;
-  let qtdOfLinksLoaded = 
-    (initialQtd + offset) <  qtdTotal ? 
-    (initialQtd + offset) : qtdTotal;
-  
+  const { links } = state.data;
+  const { searchTerm, initialQtd, offset } = state.UI;
+  const searchTermUpperCase = searchTerm.toUpperCase();
+  const searchResult = Array.isArray(links) && links.length > 0 && links.filter(
+    item => new RegExp(`^.*${searchTermUpperCase}.*$`).test(item.meta.title.toUpperCase()),
+  );
+  const qtdTotal = searchResult.length;
+  const qtdOfLinksLoaded = (initialQtd + offset) < qtdTotal ? (initialQtd + offset) : qtdTotal;
   return {
     ...state,
-    UI:{
+    UI: {
       ...state.UI,
       links: searchResult,
-      qtdTotal: qtdTotal,
-      qtdOfLinksLoaded: qtdOfLinksLoaded
-    }
+      qtdTotal,
+      qtdOfLinksLoaded,
+    },
   };
 };
 

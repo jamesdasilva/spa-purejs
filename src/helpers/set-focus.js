@@ -1,12 +1,9 @@
-const setFocus = (state) => {
-  return {
-    ...state,
-    UI:{
-      ...state.UI,
-      searchFocus: true
-    }
-  };
-};
+const setFocus = state => ({
+  ...state,
+  UI: {
+    ...state.UI,
+    searchFocus: true,
+  },
+});
 
 export default setFocus;
-  
