@@ -2,7 +2,7 @@ const setTotalCount = (state, totalCount) => ({
   ...state,
   UI: {
     ...state.UI,
-    qtdTotal: parseInt(totalCount),
+    qtdTotal: parseInt(totalCount, 10),
   },
 });
 
