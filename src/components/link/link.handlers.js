@@ -1,5 +1,5 @@
-import updateLink from '../../update-link';
-import fetchLinks from '../../fetch-links';
+import updateLink from '../../repositories/update-link';
+import fetchLinks from '../../repositories/fetch-links';
 import setTotalCount from '../../helpers/set-total-count';
 import setIsFetching from '../../helpers/set-is-fetching';
 import clearIsFetching from '../../helpers/clear-is-fetching';

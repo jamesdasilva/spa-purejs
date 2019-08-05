@@ -12,7 +12,7 @@ import { ReloadButton, reloadButtonHandlers } from './components/reload-button/r
 import { Search, searchHandlers } from './components/search/search.component';
 import { User } from './components/user/user.component';
 
-import fetchLinks from './fetch-links';
+import fetchLinks from './repositories/fetch-links';
 
 
 const components = {

@@ -6,11 +6,11 @@ import setTotalCount from './helpers/set-total-count';
 import generateParamsFetchLinks from './helpers/generate-params-fetch-links';
 
 import storeFactory from './storage/store-factory';
-import fetchLinks from './fetch-links';
+import fetchLinks from './repositories/fetch-links';
 import './main.scss';
 import 'font-awesome/css/font-awesome.css';
 
-import render from './render';
+import render from './core/render';
 import LinksExplorer from './pages/links-explorer/links-explorer';
 
 import { appendDOMHandlers } from './components.list';
