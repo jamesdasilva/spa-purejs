@@ -1,5 +1,4 @@
 import components from '../components.list';
-
 import cleanContainer from '../helpers/clean-container';
 import insertInContainer from '../helpers/insert-in-container';
 

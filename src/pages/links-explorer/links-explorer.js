@@ -1,3 +1,5 @@
+import './links-explorer.scss';
+
 const LinksExplorer = (components) => {
 
   const { state, Logo, Credits, FooterBrand, 

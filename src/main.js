@@ -7,7 +7,6 @@ import generateParamsFetchLinks from './helpers/generate-params-fetch-links';
 
 import storeFactory from './storage/store-factory';
 import fetchLinks from './repositories/fetch-links';
-import './main.scss';
 import 'font-awesome/css/font-awesome.css';
 
 import render from './core/render';
