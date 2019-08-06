@@ -1,13 +1,19 @@
 @import "../../_variables.scss";
 
+@mixin margins-on-all-sides($spacing) {
+  margin: $spacing;
+}
+
 .footer__brand{
   display: flex;
 }
 .footer__brand__logo{
-  margin: 15px 15px 15px 0;
+  @include margins-on-all-sides(15px);
+  margin-left: 0;
 }
 .footer__brand__text{
-  margin: 15px 15px 15px 0;
+  @include margins-on-all-sides(15px);
+  margin-left: 0;
 }
 .footer__brand__text__title{
   font-weight: bold;

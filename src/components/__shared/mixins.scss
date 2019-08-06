@@ -1,0 +1,31 @@
+@mixin box(
+  $width: 10px, $height: 10px, 
+  $min-width: 0, $max-width: none, 
+  $min-height: 0, $max-height: none,
+  ) {
+	box-sizing: border-box;
+	width: $width;
+  height: $height;
+  min-width: $min-width; 
+  max-width: $max-width;
+  min-height: $min-height;
+  max-height: $max-height;
+}
+
+@mixin border(
+  $thickness: 1px, 
+  $style: solid,
+  $color: #000,
+  $radius: 3px
+  ){
+  border: $thickness $style $color;
+  border-radius: $radius
+}
+
+@mixin paint(
+  $background: #ccc,
+  $content: #222
+){
+  $background-color: $background;
+  $color: $content
+}

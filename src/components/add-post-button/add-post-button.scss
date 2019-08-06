@@ -1,3 +1,5 @@
+@import "../__shared/mixins.scss";
+
 @mixin button-box($width, $height) {
 	box-sizing: border-box;
 	line-height: $height;
@@ -13,24 +15,24 @@
 	font-weight: bold;
 	font-size: $size;
 }
-
-
 .add-post-button{
 	@include flex();
-	@include button-box(134px, 40px);
+	@include box(134px, 40px);
 }
 .add-post-button__icon{
-		@include button-box(40px, 40px);
-		border-radius: 3px 0 0 3px;
-		border: 1px solid rgb(214, 56, 32);
-		@include button-text(18px);
-		background-color: rgb(227, 71, 47);
-		color: #fff;
+	@include box(40px, 40px);
+	border-radius: 3px 0 0 3px;
+	border: 1px solid rgb(214, 56, 32);
+	font: normal bold 18px/40px Arial, Helvetica, sans-serif;
+	text-align: center;
+	background-color: rgb(227, 71, 47);
+	color: #fff;
 }
 .add-post-button__text{
 	@include button-box(94px, 40px);
 	border-radius: 0 3px 3px 0;
-	@include button-text(14px);
+	font: normal bold 14px/40px Arial, Helvetica, sans-serif;
+	text-align: center;
 	background-color: rgb(227, 71, 47);
 	color: #fff;
 }

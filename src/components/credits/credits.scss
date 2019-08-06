@@ -1,21 +1,25 @@
+@mixin margins-on-the-sides($spacing) {
+  margin: $spacing 0;
+}
+@mixin credits-text($size){
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: right;
+	font-size: $size;
+}
 .credits{
-  margin: 15px 0;
+  @include margins-on-the-sides(15px);
 }
 .credits__links{
-  text-align: right;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  color: rgb(43, 43, 43);
   margin-top: 7px;
   margin-bottom: 3px;
+  @include credits-text(12px);
+  color: rgb(43, 43, 43);
   a {
     color: #e3472f;
     text-decoration: none;
   }
 }
 .credits__copyright{
-  text-align: right;
-  font-family: Arial, Helvetica, sans-serif;
+  @include credits-text(12px);
   color: rgb(110, 110, 110);
-  font-size: 12px;
 }

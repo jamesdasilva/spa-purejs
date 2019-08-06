@@ -1,19 +1,30 @@
 $width: 40px;
 $height: 40px;
-  
+@mixin button-box($width, $height) {
+	box-sizing: border-box;
+	width: $width;
+	height: $height;
+}
+@mixin button-border($thickness: 1px, $radius: 3px, $color: rgb(220, 20, 20)) {
+	border: solid rgb(219, 219, 219) 1px;
+  border-radius: $radius;
+}
+@mixin button-spacing($internal, $outer) {
+  padding: $internal;
+  margin: $outer;
+}
+@mixin button-paint($background: #222, $color: #777) {
+  background-color: $background;
+  color: $color;
+}
 .hamburguer-button{
-  box-sizing: border-box;
-  width: $width;
-  height: $height;
-  border: solid rgb(219, 219, 219) 1px;
-  border-radius: 3px;
-  margin-left: 20px;
-  padding: 10px;
+  @include button-box($width, $height);
+  @include button-border(1px, 3px, rgb(219, 219, 219));
+  @include button-spacing(10px, 0 0 0 20px);
   cursor: pointer;
 }
 .hamburguer-button__bar{
-  width: 18px;
-  height: 4px;
-  background-color: rgb(84, 84, 84);
-  margin-bottom: 3px;
+  @include button-box(100%, 4px);
+  @include button-spacing(0, 0 0 3px 0);
+  @include button-paint(rgb(84, 84, 84));
 }
