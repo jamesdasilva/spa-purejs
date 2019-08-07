@@ -9,7 +9,7 @@ import storeFactory from './storage/store-factory';
 import fetchLinks from './repositories/fetch-links';
 import 'font-awesome/css/font-awesome.css';
 
-import render from './core/render';
+import renderPage from './core/render-page';
 import LinksExplorer from './pages/links-explorer/links-explorer';
 
 import { appendDOMHandlers } from './components.list';
@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
 
   // eventos
   store.subscribe('update', (state) => {
-    render(root, state, LinksExplorer, () => {
+    renderPage(root, state, LinksExplorer, () => {
       if(document){
         appendDOMHandlers(document, store);
       }
