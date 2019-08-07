@@ -1,30 +1,26 @@
 @import "../../_variables.scss";
 
-@mixin margins-on-all-sides($spacing) {
-  margin: $spacing;
-}
-
-.footer__brand{
+.footer-brand {
   display: flex;
-}
-.footer__brand__logo{
-  @include margins-on-all-sides(15px);
-  margin-left: 0;
-}
-.footer__brand__text{
-  @include margins-on-all-sides(15px);
-  margin-left: 0;
-}
-.footer__brand__text__title{
-  font-weight: bold;
-  font-family: $fontFamily;
-  font-size: 12px;
-  color: rgb(43, 43, 43);
-  margin-top: 7px;
-  margin-bottom: 3px;
-}
-.footer__brand__text__desciption{
-  font-family: $fontFamily;
-  color: rgb(110, 110, 110);
-  font-size: 12px;
+  &__logo {
+    margin: 15px;
+    margin-left: 0;
+  }
+  &__text {
+    margin: 15px;
+    margin-left: 0;
+  }
+  &__title {
+    font-weight: bold;
+    font-family: $fontFamily;
+    font-size: 12px;
+    color: rgb(43, 43, 43);
+    margin-top: 7px;
+    margin-bottom: 3px;
+  }
+  &__description {
+    font-family: $fontFamily;
+    color: rgb(110, 110, 110);
+    font-size: 12px;
+  }
 }

@@ -1,26 +1,94 @@
 @import "../../_variables.scss";
-
-@mixin button-box($width, $height) {
-	box-sizing: border-box;
-	width: $width;
-	height: $height;
-}
-@mixin link-box() {
-  box-sizing: border-box;
-  min-height: 77px;
-}
-@mixin link-position() {
-  display: flex;
-}
-@mixin link-spacing() {
-  display: flex;
-  margin: 0 0 $margin-box 0;
-}
+@import "../__shared/mixins.scss";
 
 .link{
-  @include link-box();
-  @include link-position();
-  @include link-spacing();
+  box-sizing: border-box;
+  min-height: 77px;
+  display: flex;
+  margin: 0 0 $margin-box 0;
+  &__count-up{
+    @include box(45px, 77px);
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid $gray-lighter;
+    border-radius: $border-radius;
+    font-weight: bold
+  }
+  &__icon{
+    box-sizing: border-box;
+    height: $heightIcon;
+    line-height: $heightIcon;
+    border-bottom: 1px solid $gray-lighter;
+    font-size: $font-size-large;
+    font-family: $fontFamily;
+    text-align: center;
+    color: $brand-primary;
+    cursor: pointer;
+    &:hover{
+      background-color: #eee
+    }
+    &:active i{
+      transform: translate(0, -4px);
+    }
+  }
+  &__number{
+    box-sizing: border-box;
+    height: 44px;
+    line-height: 44px;
+    font-size: $font-size-large;
+    font-family: $fontFamily;
+    font-weight: bold;
+    text-align: center;
+    color: $gray-darker;
+  }
+  &__content{
+    padding-left: $padding-box;
+  }
+  &__url{
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: $font-size-small;
+    font-family: $fontFamily;
+    color: $gray-lighter; 
+  }
+  &__title{
+    margin-bottom: 5px;
+    line-height: $heightTitle;
+    font-size: $font-size-big;
+    font-family: $fontFamily;
+    color: $gray-dark;
+  }
+  &__meta{
+    display: flex;
+    font-family: $fontFamily;
+    font-size: 11px;
+  }
+  &__category{
+    box-sizing: border-box;
+    height: $heightMeta;
+    padding: $verticalPaddingMeta $lateralPaddingMeta;
+    border-radius: ($heightMeta / 2);
+    background-color: $brand-primary;
+    color: #fff;
+  }
+  &__author{
+    box-sizing: border-box;
+    height: $heightMeta;
+    padding: $verticalPaddingMeta $lateralPaddingMeta;
+    color: $brand-primary;
+  }
+  &__time{
+    box-sizing: border-box;
+    height: $heightMeta;
+    padding: $verticalPaddingMeta $lateralPaddingMeta;
+    color: $gray-dark;
+  }
+  &__comments{
+    box-sizing: border-box;
+    height: $heightMeta;
+    padding: $verticalPaddingMeta $lateralPaddingMeta;
+    color: $brand-primary;
+  }
 }
 .link--appearing:nth-last-child(-n+2){
   animation-name: aparecer;
@@ -39,87 +107,4 @@
     transform: translate(0,0);
     opacity: 1
   }
-}
-.link__count-up{
-  @include button-box(45px, 77px);
-  flex-shrink: 0;
-  flex-grow: 0;
-  border: 1px solid $gray-lighter;
-  border-radius: $border-radius;
-  font-weight: bold
-}
-.link__count-up__icon{
-  box-sizing: border-box;
-  height: $heightIcon;
-  line-height: $heightIcon;
-  border-bottom: 1px solid $gray-lighter;
-  font-size: $font-size-large;
-  font-family: $fontFamily;
-  text-align: center;
-  color: $brand-primary;
-  cursor: pointer;
-  &:hover{
-    background-color: #eee
-  }
-  &:active i{
-    transform: translate(0, -4px);
-  }
-}
-.link__count-up__number{
-  box-sizing: border-box;
-  height: 44px;
-  line-height: 44px;
-  font-size: $font-size-large;
-  font-family: $fontFamily;
-  font-weight: bold;
-  text-align: center;
-  color: $gray-darker;
-}
-.link__content{
-  padding-left: $padding-box;
-}
-.link__content__url{
-  margin-bottom: 5px;
-  text-transform: uppercase;
-  font-size: $font-size-small;
-  font-family: $fontFamily;
-  color: $gray-lighter; 
-}
-.link__content__title{
-  margin-bottom: 5px;
-  line-height: $heightTitle;
-  font-size: $font-size-big;
-  font-family: $fontFamily;
-  color: $gray-dark;
-}
-.link__content__meta{
-  display: flex;
-  font-family: $fontFamily;
-  font-size: 11px;
-}
-.link__content__meta__category{
-  box-sizing: border-box;
-  height: $heightMeta;
-  padding: $verticalPaddingMeta $lateralPaddingMeta;
-  border-radius: ($heightMeta / 2);
-  background-color: $brand-primary;
-  color: #fff;
-}
-.link__content__meta__author{
-  box-sizing: border-box;
-  height: $heightMeta;
-  padding: $verticalPaddingMeta $lateralPaddingMeta;
-  color: $brand-primary;
-}
-.link__content__meta__time{
-  box-sizing: border-box;
-  height: $heightMeta;
-  padding: $verticalPaddingMeta $lateralPaddingMeta;
-  color: $gray-dark;
-}
-.link__content__meta__comments{
-  box-sizing: border-box;
-  height: $heightMeta;
-  padding: $verticalPaddingMeta $lateralPaddingMeta;
-  color: $brand-primary;
 }

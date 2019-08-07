@@ -26,6 +26,15 @@
   $background: #ccc,
   $content: #222
 ){
-  $background-color: $background;
-  $color: $content
+  background-color: $background;
+  color: $content
+}
+
+@mixin flex() {
+	display: flex;
+}
+
+@mixin spacing($internal, $outer) {
+  padding: $internal;
+  margin: $outer;
 }

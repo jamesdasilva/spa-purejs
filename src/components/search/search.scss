@@ -1,45 +1,40 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
-  box-sizing: border-box;
-}
-
-.searchTerm {
-  box-sizing: border-box;
-  width: 100%;
-  border: 1px solid rgb(240, 240, 240);
-  background-color: rgb(240, 240, 240);
-  border-right: none;
-  padding: 5px;
-  height: 40px;
-  border-radius: 0 3px 3px 0;
-  outline: none;
-  color: #9DBFAF;
-}
-
-.searchTerm:focus{
-  color: #00B4CC;
-}
-
-.searchButton {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #f0f0f0;
-  background-color: #f0f0f0;
-  text-align: center;
-  color: rgb(202, 202, 202);
-  border-radius: 5px 0 0 5px;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-/*Resize the wrap to see the search bar change!*/
-.wrap{
+.search{
   width: 300px;
   height: 40px;
   margin-left: 20px;
   position: relative;
+  &__container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+  }
+  &__term {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid rgb(240, 240, 240);
+    background-color: rgb(240, 240, 240);
+    border-right: none;
+    padding: 5px;
+    height: 40px;
+    border-radius: 0 3px 3px 0;
+    outline: none;
+    color: #9DBFAF;
+    &:focus{
+      color: #00B4CC;
+    }
+  }
+  &__button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #f0f0f0;
+    background-color: #f0f0f0;
+    text-align: center;
+    color: rgb(202, 202, 202);
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
 }

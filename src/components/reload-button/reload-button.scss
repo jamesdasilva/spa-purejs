@@ -1,4 +1,4 @@
-.reload-btn{
+.reload-btn {
   height: 60px;
   width: 100%;
   margin: 60px 0 20px;
@@ -13,15 +13,15 @@
   &:focus {
     outline-width: 0;
   }
-}
-.reload-btn__icon-ctnr{
-  display: inline-block;
-}
-.reload-btn__icon-ctnr--spinning{
-  animation-name: rodar;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  &__icon-ctnr {
+    display: inline-block;
+    &--spinning {
+      animation-name: rodar;
+      animation-duration: 0.5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
 }
 @keyframes rodar {
   from {
