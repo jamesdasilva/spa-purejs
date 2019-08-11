@@ -1,6 +1,6 @@
 import components from '../components.list';
-import cleanContainer from '../helpers/clean-container';
-import insertInContainer from '../helpers/insert-in-container';
+import cleanContainer from './clean-container';
+import insertInContainer from './insert-in-container';
 
 const render = (container, state, Page, callback) => {
   cleanContainer(container);

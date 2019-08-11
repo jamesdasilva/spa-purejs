@@ -5,11 +5,13 @@ import setNewData from './helpers/set-new-data';
 import setTotalCount from './helpers/set-total-count';
 import generateParamsFetchLinks from './helpers/generate-params-fetch-links';
 
-import storeFactory from './storage/store-factory';
+import storeFactory from './core/store-factory';
+import renderPage from './core/render-page';
+
 import fetchLinks from './repositories/fetch-links';
 import 'font-awesome/css/font-awesome.css';
 
-import renderPage from './core/render-page';
+
 import LinksExplorer from './pages/links-explorer/links-explorer';
 
 import { appendDOMHandlers } from './components.list';

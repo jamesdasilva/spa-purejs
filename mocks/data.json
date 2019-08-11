@@ -10,7 +10,7 @@
       "category": "discussion",
       "comments": 3,
       "created_at": "1459857600",
-      "upvotes": 40
+      "upvotes": 45
     },
     {
       "meta": {
@@ -21,7 +21,7 @@
       "category": "case_study",
       "comments": 8,
       "created_at": "1459858600",
-      "upvotes": 92,
+      "upvotes": 104,
       "id": 2
     },
     {
@@ -33,7 +33,7 @@
       "category": "case_study",
       "comments": 8,
       "created_at": "1459858600",
-      "upvotes": 186,
+      "upvotes": 219,
       "id": 3
     },
     {
@@ -46,7 +46,7 @@
       "category": "discussion",
       "comments": 8,
       "created_at": "1459858600",
-      "upvotes": 37
+      "upvotes": 42
     },
     {
       "id": 5,
@@ -58,7 +58,7 @@
       "category": "discussion",
       "comments": 8,
       "created_at": "1459857900",
-      "upvotes": 157
+      "upvotes": 163
     },
     {
       "id": 6,
@@ -70,7 +70,7 @@
       "category": "ux_ui",
       "comments": 4,
       "created_at": "1459857900",
-      "upvotes": 26
+      "upvotes": 28
     },
     {
       "id": 7,
@@ -94,7 +94,7 @@
       "category": "discussion",
       "comments": 7,
       "created_at": "1459857900",
-      "upvotes": 11
+      "upvotes": 13
     },
     {
       "id": 9,
@@ -118,7 +118,7 @@
       "category": "case_study",
       "comments": 3,
       "created_at": "1459857600",
-      "upvotes": 10
+      "upvotes": 11
     },
     {
       "id": 11,
@@ -142,7 +142,7 @@
       "category": "case_study",
       "comments": 5,
       "created_at": "1459857900",
-      "upvotes": 45
+      "upvotes": 47
     },
     {
       "id": 13,

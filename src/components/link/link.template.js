@@ -6,7 +6,7 @@ const Link = (props) => {
   } = props;
   return `<div class="link">
       <div class="link__count-up">
-        <div class="link__icon" data-link-id="${position}"><i class="fa fa-angle-up"></i></div>
+        <div class="link__icon" id="_t${position}" data-link-id="${position}"><i class="fa fa-angle-up"></i></div>
         <div class="link__number">${count}</div>
       </div>
       <div class="link__content">
