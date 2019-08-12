@@ -1,4 +1,4 @@
-import Logo from './logo.template';
+import './logo.scss';
 
 const template = () => `
   <div class="logo">
@@ -6,10 +6,9 @@ const template = () => `
     <div class="logo__text">UX</div>
   </div>`;
 
-const LogoComponent = {
+const Logo = {
   template,
   events: { },
 };
 
-export { Logo };
-export default LogoComponent;
+export default Logo;

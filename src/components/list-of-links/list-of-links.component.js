@@ -1,12 +1,46 @@
-import ListOfLinks from './list-of-links.template';
 import listOfLinksHandlers from './list-of-links.handlers';
+import './list-of-links.scss';
 
-const ListOfLinksComponent = {
-  template: ListOfLinks,
+const template = (state, components) => {
+
+  const { ReloadButton, LoadingLink, Link } = components;
+  const { qtdOfLinksLoaded, qtdMaxOfLinks } = state.UI;
+  const indexLinksStart = qtdOfLinksLoaded > qtdMaxOfLinks ? qtdOfLinksLoaded - qtdMaxOfLinks : 0;
+  const indexLinksEnd = qtdOfLinksLoaded;
+
+  let linkWithPagination = state.UI.links ? 
+                           state.UI.links.slice(indexLinksStart, indexLinksEnd) : [];
+
+  let LoadingLinkResult = state.UI.isFetching ? LoadingLink() : '';
+  
+  let links =  linkWithPagination.length > 0 ? linkWithPagination.map(item => Link({
+    count: item.upvotes,
+    title: item.meta.title,
+    url: item.meta.url,
+    category: item.category,
+    comments: item.comments,
+    author: item.meta.author,
+    time: item.created_at,
+    position: item.id,
+    length: linkWithPagination.length,
+    isFetching: state.UI.isFetching
+  })).join("") : `<div class="list-of-links__empty">não há resultados</div>`;   
+  return `
+  <div class="list-of-links">
+    <div class="list-of-links__links">
+      ${links}
+      ${LoadingLinkResult}
+    </div>
+    ${ReloadButton(state.UI.isFetching)}</div>`;
+  
+}
+
+const ListOfLinks = {
+  template,
   events: {
     scroll: ['.list-of-links__links']
   },
 };
 
-export { ListOfLinks, listOfLinksHandlers};
-export default ListOfLinksComponent;
+export { listOfLinksHandlers };
+export default ListOfLinks;

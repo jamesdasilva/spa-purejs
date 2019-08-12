@@ -1,4 +1,4 @@
-import LoadingLink from './loading-link.template';
+import './loading-link.scss';
 
 const template = () => `
   <div class="loading-link">
@@ -7,11 +7,10 @@ const template = () => `
     </div>
   </div>`;
 
-const LoadingLinkComponent = {
+const LoadingLink = {
   template,
   events: { },
 };
 
-export { LoadingLink };
-export default LoadingLinkComponent;
+export default LoadingLink;
 

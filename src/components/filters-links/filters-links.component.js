@@ -1,9 +1,11 @@
-import FiltersLinks from './filters-links.template';
+import './filters-links.scss';
+import HamburguerButton from '../hamburguer-button/hamburguer-button.template';
 
-const FiltersLinksComponent = {
-  template: FiltersLinks,
+const template = () => `${HamburguerButton()}`;
+
+const FiltersLinks = {
+  template,
   events: { },
 };
 
-export { FiltersLinks };
-export default FiltersLinksComponent;
+export default FiltersLinks;

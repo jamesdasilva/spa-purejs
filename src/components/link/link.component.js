@@ -1,4 +1,4 @@
-import Link from './link.template';
+import './link.scss';
 import linkHandlers from './link.handlers';
 
 const template = (props) => {
@@ -35,5 +35,5 @@ const LinkComponent = {
   },
 };
 
-export { Link, linkHandlers };
+export { linkHandlers };
 export default LinkComponent;

@@ -1,4 +1,4 @@
-import ReloadButton from './reload-button.template';
+import './reload-button.scss';
 import reloadButtonHandlers from './reload-button.handlers';
 
 const template = (isFetching) => `
@@ -15,5 +15,5 @@ const ReloadButtonComponent = {
   },
 };
 
-export { ReloadButton, reloadButtonHandlers };
+export { reloadButtonHandlers };
 export default ReloadButtonComponent; 

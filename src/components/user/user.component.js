@@ -1,4 +1,4 @@
-import User from './user.template';
+import './user.scss';
 
 const template = () => `
   <div class="user">
@@ -11,5 +11,4 @@ const UserComponent = {
   events: { },
 };
 
-export { User };
 export default UserComponent;

@@ -1,4 +1,4 @@
-import Search from './search.template';
+import './search.scss';
 import searchHandlers from './search.handlers';
 
 const template = (term) => `
@@ -16,12 +16,12 @@ const template = (term) => `
     </div>
   </div>`;
 
-const SearchComponent = {
+const Search = {
   template,
   events: {
     input: ['.search__term']
   },
 };
 
-export { Search, searchHandlers };
-export default SearchComponent;
+export { searchHandlers };
+export default Search;

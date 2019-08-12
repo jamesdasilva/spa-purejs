@@ -1,9 +1,18 @@
-import Credits from './credits.template';
+import './credits.scss';
 
-const CreditsComponent = {
-  template: Credits,
+const template = () => `
+  <div class="credits">
+    <div class="credits__links">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Sign in</a>
+    </div>
+    <div class="credits__copyright">C 2014 - The UX Library</div>
+  </div>`;
+
+const Credits = {
+  template,
   events: { },
 };
 
-export { Credits };
-export default CreditsComponent;
+export default Credits;

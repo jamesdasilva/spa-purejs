@@ -1,4 +1,4 @@
-import Loading from './loading.template';
+import './loading.scss'; 
 
 const template = () => `
   <div class="loading">
@@ -9,10 +9,9 @@ const template = () => `
     </div>
   </div>`;
 
-const LoadingComponent = {
+const Loading = {
   template,
   events: { },
 };
 
-export { Loading };
-export default LoadingComponent;
+export default Loading;
