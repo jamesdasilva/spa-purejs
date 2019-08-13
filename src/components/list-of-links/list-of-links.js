@@ -1,7 +1,7 @@
 import listOfLinksHandlers from './list-of-links.handlers';
 import './list-of-links.scss';
 
-const template = (state, components) => {
+const ListOfLinks = (state, components) => {
 
   const { ReloadButton, LoadingLink, Link } = components;
   const { qtdOfLinksLoaded, qtdMaxOfLinks } = state.UI;
@@ -32,14 +32,10 @@ const template = (state, components) => {
       ${LoadingLinkResult}
     </div>
     ${ReloadButton(state.UI.isFetching)}</div>`;
-  
 }
 
-const ListOfLinks = {
-  template,
-  events: {
-    scroll: ['.list-of-links__links']
-  },
+ListOfLinks.events = {
+  scroll: ['.list-of-links__links']
 };
 
 export { listOfLinksHandlers };

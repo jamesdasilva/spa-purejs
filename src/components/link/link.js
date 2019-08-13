@@ -1,7 +1,7 @@
 import './link.scss';
 import linkHandlers from './link.handlers';
 
-const template = (props) => {
+const LinkComponent = (props) => {
   const {
     count, title, category, comments, time, url, author, position
   } = props;
@@ -28,11 +28,8 @@ const template = (props) => {
     </div>`;
 };
 
-const LinkComponent = {
-  template,
-  events: {
+LinkComponent.events = {
     click: ['.link__icon']
-  },
 };
 
 export { linkHandlers };

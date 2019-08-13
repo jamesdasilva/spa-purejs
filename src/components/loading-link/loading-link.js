@@ -1,16 +1,13 @@
 import './loading-link.scss';
 
-const template = () => `
+const LoadingLink = () => `
   <div class="loading-link">
     <div class="lds-ellipsis">
       <div></div><div></div><div></div><div></div>
     </div>
   </div>`;
 
-const LoadingLink = {
-  template,
-  events: { },
-};
+LoadingLink.events = { };
 
 export default LoadingLink;
 

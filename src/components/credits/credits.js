@@ -1,6 +1,6 @@
 import './credits.scss';
 
-const template = () => `
+const Credits = () => `
   <div class="credits">
     <div class="credits__links">
       <a href="#">About</a>
@@ -10,9 +10,6 @@ const template = () => `
     <div class="credits__copyright">C 2014 - The UX Library</div>
   </div>`;
 
-const Credits = {
-  template,
-  events: { },
-};
+Credits.events = { };
 
 export default Credits;

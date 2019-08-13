@@ -1,14 +1,11 @@
 import './logo.scss';
 
-const template = () => `
+const Logo = () => `
   <div class="logo">
     <div class="logo__hexagon"></div>
     <div class="logo__text">UX</div>
   </div>`;
 
-const Logo = {
-  template,
-  events: { },
-};
+Logo.events = { };
 
 export default Logo;

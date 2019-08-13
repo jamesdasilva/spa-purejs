@@ -1,7 +1,7 @@
 import './search.scss';
 import searchHandlers from './search.handlers';
 
-const template = (term) => `
+const Search = (term) => `
   <div class="search">
     <div class="search__container">
       <button type="submit" class="search__button">
@@ -16,11 +16,8 @@ const template = (term) => `
     </div>
   </div>`;
 
-const Search = {
-  template,
-  events: {
-    input: ['.search__term']
-  },
+Search.events = {
+  input: ['.search__term']
 };
 
 export { searchHandlers };

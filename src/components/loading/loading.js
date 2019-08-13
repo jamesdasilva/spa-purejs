@@ -1,6 +1,6 @@
 import './loading.scss'; 
 
-const template = () => `
+const Loading = () => `
   <div class="loading">
     <div class="lds-grid">
       <div></div>
@@ -9,9 +9,6 @@ const template = () => `
     </div>
   </div>`;
 
-const Loading = {
-  template,
-  events: { },
-};
+Loading.events = { };
 
 export default Loading;
