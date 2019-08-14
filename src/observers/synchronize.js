@@ -1,6 +1,11 @@
-import fetchLinks from './repositories/fetch-links';
+import fetchLinks from '../repositories/fetch-links';
+import setIsFetching from '../helpers/set-is-fetching';
+import clearIsFetching from '../helpers/clear-is-fetching';
+import setNewData from '../helpers/set-new-data';
+import setTotalCount from '../helpers/set-total-count';
+import generateParamsFetchLinks from '../helpers/generate-params-fetch-links';
 
-const synchronize = ({ store, repositories }) => {
+const synchronize = (store) => {
   store.setState(setIsFetching(store.getState()));
   const paramers = generateParamsFetchLinks(store.getState());
   setTimeout(() => {
@@ -14,4 +19,4 @@ const synchronize = ({ store, repositories }) => {
   }, 500);
 }
 
-export { synchronize };
+export default synchronize;

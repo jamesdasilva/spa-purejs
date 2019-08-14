@@ -1,6 +1,6 @@
 import updateLink from '../../repositories/update-link';
 
-const linkHandlers = (document, store) => {
+const linkHandlers = (store) => {
   const links = document.querySelectorAll('.link__icon');
   links.forEach((link) => { 
     link.addEventListener('click', () => {

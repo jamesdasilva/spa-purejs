@@ -14,7 +14,7 @@ const fetchLinks = ({start, end, sort, searchTerm}) => {
     path.push(`q=${searchTerm}`);
   }
   const url = `${baseUrl}?${path.join('&')}`;
-  console.log("url ", url);
+  //console.log("url ", url);
   return fetch(url)
   .then((response) => {
     return {

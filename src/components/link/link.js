@@ -1,7 +1,7 @@
 import './link.scss';
 import linkHandlers from './link.handlers';
 
-const LinkComponent = (props) => {
+const Link = (props) => {
   const {
     count, title, category, comments, time, url, author, position
   } = props;
@@ -28,9 +28,9 @@ const LinkComponent = (props) => {
     </div>`;
 };
 
-LinkComponent.events = {
+Link.events = {
     click: ['.link__icon']
 };
 
 export { linkHandlers };
-export default LinkComponent;
+export default Link;

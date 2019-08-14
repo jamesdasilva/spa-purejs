@@ -1,57 +1,50 @@
-import setIsFetching from './helpers/set-is-fetching';
-import clearIsFetching from './helpers/clear-is-fetching';
-import initialState from './helpers/initial-state';
-import setNewData from './helpers/set-new-data';
-import setTotalCount from './helpers/set-total-count';
-import generateParamsFetchLinks from './helpers/generate-params-fetch-links';
-
-import storeFactory from './core/store-factory';
-import renderPage from './core/render-page';
-
-import fetchLinks from './repositories/fetch-links';
 import 'font-awesome/css/font-awesome.css';
+import initialState from './helpers/initial-state';
+import storeFactory from './core/store-factory';
+import viewFactory from './core/view-factory';
+import components, { appendDOMHandlers } from './components.list';
 
-
+// Pages
 import LinksExplorer from './pages/links-explorer/links-explorer';
 
-import { appendDOMHandlers } from './components.list';
+// Observers
+import synchronize from './observers/synchronize'
 
 window.addEventListener('load', function() {
 
-  const root = document.querySelector('#root');
-  const store = storeFactory(root);
+  const store = storeFactory();
+  const view = viewFactory(components);
 
-  // estado inicial
   store.setState(initialState(), false);
 
-  // buscar dados persistidos
-  const synchronize = (state) => {
-    store.setState(setIsFetching(store.getState()));
-    const paramers = generateParamsFetchLinks(store.getState());
-    setTimeout(() => {
-      fetchLinks(paramers).then((newData) => {
-        store.setState(setTotalCount(store.getState(), newData.count), false);
-        newData.links.then(links => {
-          store.setState(setNewData({ ...store.getState() }, links), true);
-          store.setState(clearIsFetching(store.getState()));
-        });
-      });
-    }, 500);
-  }
-
-  //synchronize(store);
-
-  store.subscribe('synchronize', synchronize);
-
-  // eventos
-  store.subscribe('update', (state) => {
-    renderPage(root, state, LinksExplorer, () => {
-      if(document){
-        appendDOMHandlers(document, store);
-      }
+  store.subscribe('synchronize', () => {
+    synchronize(store);
+  });
+  store.subscribe('update', () => {
+    view.renderPage(store.getState(), LinksExplorer, (event) => {
+      view.fire(event);
+      //appendDOMHandlers(store);
     });
   });
 
   store.fire('synchronize');
+
+  view.on('.reload-btn:click', () => {
+    this.console.log('reagindo ao evento .reload-btn:click da view');
+  });
+  view.on('.link__icon:click', () => {
+    this.console.log('reagindo ao evento .link__icon:click da view');
+  });
+  view.on('.search__term:input', () => {
+    this.console.log('reagindo ao evento .search__term:input da view');
+  });
+  view.on('.list-of-links__links:scroll', () => {
+    this.console.log('reagindo ao evento .list-of-links__links:scroll da view');
+  });
+  view.on('update', () => {
+    this.console.log('reagindo ao evento update da view');
+  });
+
+  this.console.log('view ', view);
 
 });

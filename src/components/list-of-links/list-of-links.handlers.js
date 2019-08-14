@@ -2,7 +2,7 @@ import scrollToBottom from '../../helpers/scroll-to-bottom';
 import scrollTo from '../../helpers/scroll-to';
 import setScroll from '../../helpers/set-scroll';
 
-const listOfLinksHandlers = (document, store) => {
+const listOfLinksHandlers = (store) => {
   let linksContainer = document.querySelector('.list-of-links__links');
   if(!store.getState().UI.scrollActive){
     scrollTo(linksContainer, store.getState().UI.scroll);
