@@ -1,4 +1,5 @@
 import './link.scss';
+import updateLink from '../../repositories/update-link';
 
 const Link = (props) => {
   const {
@@ -27,8 +28,26 @@ const Link = (props) => {
     </div>`;
 };
 
+const updateUpvotesLink = (state, dataEvent) => {
+  const { linkId } = dataEvent.dataset;
+  const selectedLink = state.get().UI.links.find( item => item.id == linkId );
+  updateLink({
+    linkId: linkId, 
+    data: {
+      ...selectedLink,
+      upvotes: selectedLink.upvotes + 1
+    } 
+  }).then(() => {
+    state.fire('synchronize');
+  });
+}
+
 Link.events = {
-    click: ['.link__icon']
+  click: ['.link__icon']
 };
+
+Link.handlers = {
+  '.link__icon:click': [updateUpvotesLink]
+}
 
 export default Link;

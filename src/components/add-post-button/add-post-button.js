@@ -7,5 +7,6 @@ const AddPostButton = () => `
   </div>`;
 
 AddPostButton.events = { };
+AddPostButton.handlers = { };
 
 export default AddPostButton;

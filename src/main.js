@@ -9,17 +9,11 @@ import LinksExplorer from './pages/links-explorer/links-explorer';
 
 // Observers
 import synchronize from './observers/synchronize-with-api';
-import reloadLinksFromAPI from './observers/reload-links-from-api';
-import registerScrollInTheState from './observers/register-scroll-in-the-state';
-import scrollLinksList from './observers/scroll-links-list';
-import keepFocusOnTheSearch from './observers/keep-focus-on-the-search';
-import setTermSearchInState from './observers/register-search-term-in-the-state';
-import updateUpvoteLink from './observers/update-upvote-link';
 
 window.addEventListener('load', function() {
 
   const state = stateFactory();
-  const view = viewFactory(components);
+  const view = viewFactory(components, state);
 
   state.set(setInitialState(), false);
 
@@ -35,20 +29,20 @@ window.addEventListener('load', function() {
   state.fire('synchronize');
 
   view.on('.reload-btn:click', () => {
-    reloadLinksFromAPI(state);
+    //reloadLinksFromAPI(state);
   });
-  view.on('.link__icon:click', (dataEvent) => {
-    updateUpvoteLink(state, dataEvent)
+  view.on('.link__icon:click', (state, dataEvent) => {
+    //updateUpvoteLink(state, dataEvent)
   });
-  view.on('.search__term:input', (dataEvent) => {
-    setTermSearchInState(state, dataEvent);
+  view.on('.search__term:input', (state, dataEvent) => {
+    //setTermSearchInState(state, dataEvent);
   });
   view.on('.list-of-links__links:scroll', () => {
-    registerScrollInTheState(state);
+    //registerScrollInTheState(state);
   });
-  view.on('update', () => {
-    keepFocusOnTheSearch(state);
-    scrollLinksList(state);
+  view.on('update', (state) => {
+    //keepFocusOnTheSearch(state);
+    //scrollLinksList(state);
   });
 
 });
