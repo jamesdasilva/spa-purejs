@@ -28,15 +28,31 @@ const Link = (props) => {
     </div>`;
 };
 
+const incrementUpvotesLink = (state, linkId) => {
+  const selectedLink = state.UI.links.find(item => item.id == linkId);
+  const selectedLinkIndex = state.UI.links.findIndex(item => item.id == linkId);
+  const selectedLinkUpdate = {
+    ...selectedLink,
+    upvotes: selectedLink.upvotes + 1
+  };
+  state.UI.links.splice(selectedLinkIndex, 1, selectedLinkUpdate);
+  const LinksUpdate = [ ...state.UI.links];
+  return {
+    ...state,
+    UI: {
+      ...state.UI,
+      scrollActive: false,
+      links: LinksUpdate
+    }
+  }
+};
+
 const updateUpvotesLink = (state, dataEvent) => {
   const { linkId } = dataEvent.dataset;
-  const selectedLink = state.get().UI.links.find( item => item.id == linkId );
+  state.set(incrementUpvotesLink(state.get(), linkId));
   updateLink({
     linkId: linkId, 
-    data: {
-      ...selectedLink,
-      upvotes: selectedLink.upvotes + 1
-    } 
+    data: state.get().UI.links.find(item => item.id == linkId)
   }).then(() => {
     state.fire('synchronize');
   });

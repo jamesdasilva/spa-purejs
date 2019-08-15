@@ -28,7 +28,7 @@ window.addEventListener('load', function() {
 
   state.fire('synchronize');
 
-  view.on('.reload-btn:click', () => {
+  view.on('.reload-btn:click', (state, dataEvent) => {
     //reloadLinksFromAPI(state);
   });
   view.on('.link__icon:click', (state, dataEvent) => {
@@ -37,7 +37,7 @@ window.addEventListener('load', function() {
   view.on('.search__term:input', (state, dataEvent) => {
     //setTermSearchInState(state, dataEvent);
   });
-  view.on('.list-of-links__links:scroll', () => {
+  view.on('.list-of-links__links:scroll', (state, dataEvent) => {
     //registerScrollInTheState(state);
   });
   view.on('update', (state) => {

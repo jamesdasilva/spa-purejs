@@ -40,7 +40,6 @@ export default function (components, state) {
     fire('update');
   }
   const subscribeComponentHandlersInView = (components) => {
-    console.log('_components ', components);
     const arrayOfComponents = objectToArray(components);
     const componentsWithHandlers = arrayOfComponents
       .filter(component => component._value.handlers && 
@@ -52,8 +51,6 @@ export default function (components, state) {
           on(hKey, handler)
         });
       });
-      console.log('subscribes ', subscribes);
-      
     });
   };
   subscribeComponentHandlersInView(_components);
