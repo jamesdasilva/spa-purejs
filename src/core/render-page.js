@@ -1,11 +1,20 @@
-import cleanContainer from './clean-container';
-import insertInContainer from './insert-in-container';
 import addAllEventListenersInDOM from './add-all-event-listeners-in-dom';
 
-const render = (container, components, state, Page, callback) => {
-  cleanContainer(container);
-  insertInContainer(document, container, Page({ ...components, state }));
-  addAllEventListenersInDOM(components, callback);
+const cleanContainer = (cntnr) => {
+  while (cntnr.firstChild) {
+    cntnr.removeChild(cntnr.firstChild);
+  }
 };
 
-export default render;
+const insertInContainer = (container, layout) => {
+  const component = document.createRange().createContextualFragment(layout);
+  container.appendChild(component);
+};
+
+const renderPage = (container, components, state, page, fireEvent) => {
+  cleanContainer(container);
+  insertInContainer(container, page({ ...components, state }));
+  addAllEventListenersInDOM(components, fireEvent);
+};
+
+export default renderPage;

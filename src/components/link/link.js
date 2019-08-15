@@ -1,5 +1,4 @@
 import './link.scss';
-import linkHandlers from './link.handlers';
 
 const Link = (props) => {
   const {
@@ -32,5 +31,4 @@ Link.events = {
     click: ['.link__icon']
 };
 
-export { linkHandlers };
 export default Link;

@@ -2,13 +2,19 @@ import 'font-awesome/css/font-awesome.css';
 import initialState from './helpers/initial-state';
 import storeFactory from './core/store-factory';
 import viewFactory from './core/view-factory';
-import components, { appendDOMHandlers } from './components.list';
+import components from './components.list';
 
 // Pages
 import LinksExplorer from './pages/links-explorer/links-explorer';
 
 // Observers
-import synchronize from './observers/synchronize'
+import synchronize from './observers/synchronize';
+import reloadLinks from './observers/reload-links-from-api';
+import setScrollInState from './observers/set-scroll-in-state';
+import scrollLinksList from './observers/scroll-links-list';
+import focusSearch from './observers/focus-search';
+import setTermSearchInState from './observers/set-term-search-in-state';
+import updateUpvoteLink from './observers/update-upvote-link';
 
 window.addEventListener('load', function() {
 
@@ -21,30 +27,28 @@ window.addEventListener('load', function() {
     synchronize(store);
   });
   store.subscribe('update', () => {
-    view.renderPage(store.getState(), LinksExplorer, (event) => {
-      view.fire(event);
-      //appendDOMHandlers(store);
+    view.renderPage(store.getState(), LinksExplorer, (event, dataEvent) => {
+      view.fire(event, dataEvent);
     });
   });
 
   store.fire('synchronize');
 
   view.on('.reload-btn:click', () => {
-    this.console.log('reagindo ao evento .reload-btn:click da view');
+    reloadLinks(store);
   });
-  view.on('.link__icon:click', () => {
-    this.console.log('reagindo ao evento .link__icon:click da view');
+  view.on('.link__icon:click', (dataEvent) => {
+    updateUpvoteLink(store, dataEvent)
   });
-  view.on('.search__term:input', () => {
-    this.console.log('reagindo ao evento .search__term:input da view');
+  view.on('.search__term:input', (dataEvent) => {
+    setTermSearchInState(store, dataEvent);
   });
   view.on('.list-of-links__links:scroll', () => {
-    this.console.log('reagindo ao evento .list-of-links__links:scroll da view');
+    setScrollInState(store);
   });
   view.on('update', () => {
-    this.console.log('reagindo ao evento update da view');
+    focusSearch(store);
+    scrollLinksList(store);
   });
-
-  this.console.log('view ', view);
 
 });

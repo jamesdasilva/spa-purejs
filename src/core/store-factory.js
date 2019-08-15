@@ -5,12 +5,14 @@ export default function () {
   let state;
   const fire = (event) => {
     const type = event || 'any';
+    console.log('fire', event);
     subscribes[type].forEach((handler) => {
       handler(state);
     });
   };
   const setState = (newState, update = true) => {
     state = { ...newState };
+    console.log('setState');
     if (update) {
       fire('update');
     }

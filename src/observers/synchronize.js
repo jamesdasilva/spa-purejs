@@ -12,7 +12,7 @@ const synchronize = (store) => {
     fetchLinks(paramers).then((newData) => {
       store.setState(setTotalCount(store.getState(), newData.count), false);
       newData.links.then(links => {
-        store.setState(setNewData({ ...store.getState() }, links), true);
+        store.setState(setNewData({ ...store.getState() }, links), false);
         store.setState(clearIsFetching(store.getState()));
       });
     });

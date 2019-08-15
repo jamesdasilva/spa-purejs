@@ -6,10 +6,10 @@ export default function (components) {
   };
   const _conatiner = document.querySelector('#root');
   const _components = components;
-  const fire = (event) => {
+  const fire = (event, dataEvent) => {
     const type = event || 'any';
     subscribes[type] && subscribes[type].forEach((handler) => {
-      handler();
+      handler(dataEvent);
     });
   };
   const on = (event, funcObserver) => {

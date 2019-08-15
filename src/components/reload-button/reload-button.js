@@ -1,5 +1,4 @@
 import './reload-button.scss';
-import reloadButtonHandlers from './reload-button.handlers';
 
 const ReloadButton = (isFetching) => `
   <button class="reload-btn" id="reload-button" ${isFetching && 'disabled'}>
@@ -12,5 +11,4 @@ ReloadButton.events = {
     click: ['.reload-btn']
 };
 
-export { reloadButtonHandlers };
 export default ReloadButton; 

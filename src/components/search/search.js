@@ -1,5 +1,4 @@
 import './search.scss';
-import searchHandlers from './search.handlers';
 
 const Search = (term) => `
   <div class="search">
@@ -20,5 +19,4 @@ Search.events = {
   input: ['.search__term']
 };
 
-export { searchHandlers };
 export default Search;

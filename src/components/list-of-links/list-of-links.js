@@ -1,4 +1,3 @@
-import listOfLinksHandlers from './list-of-links.handlers';
 import './list-of-links.scss';
 
 const ListOfLinks = (state, components) => {
@@ -38,5 +37,4 @@ ListOfLinks.events = {
   scroll: ['.list-of-links__links']
 };
 
-export { listOfLinksHandlers };
 export default ListOfLinks;
