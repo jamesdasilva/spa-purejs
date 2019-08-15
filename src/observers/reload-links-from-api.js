@@ -1,10 +1,10 @@
-import loadMore from '../helpers/load-more';
-import setScrollActive from '../helpers/set-scroll-active';
+import nextOffset from '../helpers/state-functions/next-offset';
+import setScrollActive from '../helpers/state-functions/set-scroll-active';
 
-const reloadLinks = (store) => {
-  store.setState(setScrollActive(store.getState(), 'bottom'), false);
-  store.setState(loadMore(store.getState()), false);
-  store.fire('synchronize');
+const reloadLinksFromAPI = (state) => {
+  state.set(setScrollActive(state.get(), 'bottom'), false);
+  state.set(nextOffset(state.get()), false);
+  state.fire('synchronize');
 };
 
-export default reloadLinks;
+export default reloadLinksFromAPI;

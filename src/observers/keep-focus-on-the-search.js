@@ -1,11 +1,11 @@
 import moveCursorToEnd from '../helpers/move-cursor-to-end';
 
-const focusSearch = (store) => {
+const keepFocusOnTheSearch = (state) => {
   const search = document.querySelector('.search__term');
-  if (store.getState().UI.searchFocus) {
+  if (state.get().UI.searchFocus) {
     search.focus();
     moveCursorToEnd(search);
   }
 };
 
-export default focusSearch;
+export default keepFocusOnTheSearch;

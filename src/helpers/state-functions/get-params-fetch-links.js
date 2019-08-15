@@ -1,4 +1,4 @@
-const generateParamsFetchLinks = (state) => {
+const getParamsFetchLinks = (state) => {
   const {
     offset, initialQtd, qtdMaxOfLinks, sort, searchTerm,
   } = state.UI;
@@ -12,4 +12,4 @@ const generateParamsFetchLinks = (state) => {
   };
 };
 
-export default generateParamsFetchLinks;
+export default getParamsFetchLinks;

@@ -1,6 +1,6 @@
 import 'font-awesome/css/font-awesome.css';
-import initialState from './helpers/initial-state';
-import storeFactory from './core/store-factory';
+import setInitialState from './helpers/state-functions/set-initial-state';
+import stateFactory from './core/state-factory';
 import viewFactory from './core/view-factory';
 import components from './components.list';
 
@@ -8,47 +8,47 @@ import components from './components.list';
 import LinksExplorer from './pages/links-explorer/links-explorer';
 
 // Observers
-import synchronize from './observers/synchronize';
-import reloadLinks from './observers/reload-links-from-api';
-import setScrollInState from './observers/set-scroll-in-state';
+import synchronize from './observers/synchronize-with-api';
+import reloadLinksFromAPI from './observers/reload-links-from-api';
+import registerScrollInTheState from './observers/register-scroll-in-the-state';
 import scrollLinksList from './observers/scroll-links-list';
-import focusSearch from './observers/focus-search';
-import setTermSearchInState from './observers/set-term-search-in-state';
+import keepFocusOnTheSearch from './observers/keep-focus-on-the-search';
+import setTermSearchInState from './observers/register-search-term-in-the-state';
 import updateUpvoteLink from './observers/update-upvote-link';
 
 window.addEventListener('load', function() {
 
-  const store = storeFactory();
+  const state = stateFactory();
   const view = viewFactory(components);
 
-  store.setState(initialState(), false);
+  state.set(setInitialState(), false);
 
-  store.subscribe('synchronize', () => {
-    synchronize(store);
+  state.on('synchronize', () => {
+    synchronize(state);
   });
-  store.subscribe('update', () => {
-    view.renderPage(store.getState(), LinksExplorer, (event, dataEvent) => {
+  state.on('update', () => {
+    view.renderPage(state.get(), LinksExplorer, (event, dataEvent) => {
       view.fire(event, dataEvent);
     });
   });
 
-  store.fire('synchronize');
+  state.fire('synchronize');
 
   view.on('.reload-btn:click', () => {
-    reloadLinks(store);
+    reloadLinksFromAPI(state);
   });
   view.on('.link__icon:click', (dataEvent) => {
-    updateUpvoteLink(store, dataEvent)
+    updateUpvoteLink(state, dataEvent)
   });
   view.on('.search__term:input', (dataEvent) => {
-    setTermSearchInState(store, dataEvent);
+    setTermSearchInState(state, dataEvent);
   });
   view.on('.list-of-links__links:scroll', () => {
-    setScrollInState(store);
+    registerScrollInTheState(state);
   });
   view.on('update', () => {
-    focusSearch(store);
-    scrollLinksList(store);
+    keepFocusOnTheSearch(state);
+    scrollLinksList(state);
   });
 
 });

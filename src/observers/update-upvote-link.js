@@ -1,8 +1,8 @@
 import updateLink from '../repositories/update-link';
 
-const updateUpvotesLink = (store, dataEvent) => {
+const updateUpvotesLink = (state, dataEvent) => {
   const { linkId } = dataEvent.dataset;
-  const selectedLink = store.getState().UI.links.find( item => item.id == linkId );
+  const selectedLink = state.get().UI.links.find( item => item.id == linkId );
   updateLink({
     linkId: linkId, 
     data: {
@@ -10,7 +10,7 @@ const updateUpvotesLink = (store, dataEvent) => {
       upvotes: selectedLink.upvotes + 1
     } 
   }).then(() => {
-    store.fire('synchronize');
+    state.fire('synchronize');
   });
 }
 
